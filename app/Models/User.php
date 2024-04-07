@@ -11,16 +11,34 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
+
+    protected $fillable =
+        [
+            'firstName',
+            'lastName',
+            'address',
+            'phone',
+            'email',
+            'password'
+        ];
+
+    public function admin(){
+        return $this->hasOne(Admin::class);
+    }
+    public function client() {
+        return $this->hasOne(Client::class);
+    }
+    public function filmmaker() {
+        return $this->hasOne(Filmmaker::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
 
     /**
      * The attributes that should be hidden for serialization.
