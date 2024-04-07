@@ -72,7 +72,7 @@
 <div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image.jpg');">
     <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center bg-black z-50 duration-300">
         <div class="flex justify-center items-center">
-            <h1 class="text-white  text-5xl font-medium underline">Sports</h1>
+            <h1 class="text-white  text-5xl font-medium underline">ZAHIRA</h1>
         </div>
     </div>
 </div>

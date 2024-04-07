@@ -50,16 +50,16 @@
 
                 <div id="forms-container" class="flex overflow-hidden transition-transform transform ease-in-out duration-500">
                     <div id="clientForm" class="w-full">
-                        <form action="" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 ">
+                        <form action="{{route('clients.store')}}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 ">
                             @csrf
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">First Name</label>
-                                <input name="fname" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300   bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input name="firstName" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300   bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">Last Name</label>
-                                <input name="lname" type="text" placeholder="Week" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input name="lastName" type="text" placeholder="Week" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div>
@@ -67,19 +67,17 @@
                                 <input name="phone" type="text" placeholder="XXX-XX-XXXX-XXX" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
+                            <div>
+                                <label class="block mb-2 text-sm text-gray-600 ">Address</label>
+                                <input name="address" type="text" placeholder="Enter your Address" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            </div>
 
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600">Email address</label>
                                 <input name="email" type="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
-                            <input type="hidden" name="role" value="client">
 
-
-                            <div>
-                                <label class="block mb-2 text-sm text-gray-600 ">Password</label>
-                                <input name="password" type="password" placeholder="Enter your password" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-                            </div>
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">Password</label>
@@ -106,16 +104,16 @@
 
 
                     <div id="filmmakerForm" class="hidden w-full">
-                        <form action="" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 ">
+                        <form action="{{ route('filmmakers.store') }}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 ">
                             @csrf
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">First Name</label>
-                                <input name="fname" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300   bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input name="firstName" type="text" placeholder="John" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300   bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">Last Name</label>
-                                <input name="lname" type="text" placeholder="Week" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                                <input name="lastName" type="text" placeholder="Week" class="block w-full px-5 py-3 mt-2 text-gray-300 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
                             <div>
@@ -123,19 +121,16 @@
                                 <input name="phone" type="text" placeholder="XXX-XX-XXXX-XXX" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
 
-
+                            <div>
+                                <label class="block mb-2 text-sm text-gray-600 ">Address</label>
+                                <input name="address" type="text" placeholder="Enter your Address" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            </div>
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600">Email address</label>
                                 <input name="email" type="email" placeholder="johnsnow@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
-                            <input type="hidden" name="role" value="client">
 
-
-                            <div>
-                                <label class="block mb-2 text-sm text-gray-600 ">Password</label>
-                                <input name="password" type="password" placeholder="Enter your password" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-300 bg-orange-50 border border-gray-200 rounded-lg dark:text-gray-800 dark:border-gray-700 focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-                            </div>
 
                             <div>
                                 <label class="block mb-2 text-sm text-gray-600 ">Password</label>

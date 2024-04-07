@@ -18,6 +18,11 @@ Route::get('spinner', function(){
     return view('spinner');
 });
 
+Route::post('/filmmakers/register', [\App\Http\Controllers\RegisterController::class, 'filmmakerStore'])->name('filmmakers.store');
+Route::post('/clients/register', [\App\Http\Controllers\RegisterController::class, 'clientStore'])->name('clients.store');
+
+
+
 Route::get('allMovie', [\App\Http\Controllers\ClientController::class, 'allMovie']);
 Route::get('movieDetails', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
 Route::get('moviesOfCategory', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory']);
