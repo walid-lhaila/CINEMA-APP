@@ -55,6 +55,12 @@
     <div class="spinner-border-orange" role="status"></div>
 </div>
 
+@if (session('success'))
+    <div class="alert alert-success hidden">
+        {{ session('success') }}
+    </div>
+@endif
+
 
 <div class="flex relative">
 
@@ -75,19 +81,20 @@
                             <span class="sr-only">Close modal</span>
                         </button>
                     </div>
-                    <!-- Modal body -->
-                    <form class="p-4 md:p-5">
-                        <div class="grid gap-4 mb-4 grid-cols-2">
-                            <div class="col-span-2">
-                                <label for="name" class="block mb-2 text-sm font-medium text-black">Name</label>
-                                <input type="text" name="name" id="name" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Type Category name" required="">
+                        <!-- Modal body -->
+                        <form action="{{ route('categoryStore') }}" method="post" id="categoryForm" class="p-4 md:p-5">
+                            @csrf
+                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                <div class="col-span-2">
+                                    <label for="name" class="block mb-2 text-sm font-medium text-black">Name</label>
+                                    <input type="text" name="name" id="name" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Type Category name" required="">
+                                </div>
                             </div>
-                        </div>
-                        <button type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
-                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                            Add new Category
-                        </button>
-                    </form>
+                            <button  type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
+                                <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                Add new Category
+                            </button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -178,76 +185,15 @@
         </div>
         <div class="bg-gray-700 w-full h-[1px] mt-4"></div>
 
-        <div class="mt-7 flex flex-wrap gap-5">
-
-            <div class="w-[32%] h-[130px] bg-gradient-to-t from-zinc-900">
-                <div class="p-5 flex justify-between items-center">
-                    <div>
-                        <h1 class="text-gray-300 text-md">11 March 2024</h1>
-                        <h1 class="text-3xl font-medium font-serif text-white py-2">Thriller</h1>
-                    </div>
-                    <div class=" bg-orange-500  rounded-full px-2 py-2">
-                        <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[32%] h-[130px] bg-gradient-to-t from-zinc-900">
-                <div class="p-5 flex justify-between items-center">
-                    <div>
-                        <h1 class="text-gray-300 text-md">11 March 2024</h1>
-                        <h1 class="text-3xl font-medium font-serif text-white py-2">Adventure</h1>
-                    </div>
-                    <div class=" bg-orange-500  rounded-full px-2 py-2">
-                        <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="w-[32%] h-[130px] bg-gradient-to-t from-zinc-900">
-                <div class="p-5 flex justify-between items-center">
-                    <div>
-                        <h1 class="text-gray-300 text-md">11 March 2024</h1>
-                        <h1 class="text-3xl font-medium font-serif text-white py-2">Comedy</h1>
-                    </div>
-                    <div class=" bg-orange-500  rounded-full px-2 py-2">
-                        <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="w-[32%] h-[130px] bg-gradient-to-t from-zinc-900">
-                <div class="p-5 flex justify-between items-center">
-                    <div>
-                        <h1 class="text-gray-300 text-md">11 March 2024</h1>
-                        <h1 class="text-3xl font-medium font-serif text-white py-2">Action</h1>
-                    </div>
-                    <div class=" bg-orange-500  rounded-full px-2 py-2">
-                        <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
+        <div id="category-container" class="mt-7 flex flex-wrap gap-5">
         </div>
 
 
-
-
-
-
     </section>
+</div>
 
-    <script src="{{url('js/form.js')}}"></script>
-    <script src="{{url('js/spinner.js')}}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="{{url('js/form.js')}}"></script>
+<script src="{{url('js/spinner.js')}}"></script>
+<script src="{{url('js/category.js')}}"></script>
 

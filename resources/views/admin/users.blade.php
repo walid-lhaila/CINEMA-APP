@@ -107,7 +107,7 @@
                 </a>
 
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300 transform rounded-lg " href="cinemas">
-                    <svg class="w-5 h-5 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
                     </svg>
 
@@ -146,55 +146,21 @@
                 <th>ID</th>
                 <th>FULL NAME</th>
                 <th>ADRESS EMAIL</th>
-                <th>ROLE</th>
+                <th>PHONE</th>
                 <th>CREATED DATE</th>
                 <th class="py-6">ACTION</th>
             </thead>
+            <tbody id="user-container"  class="text-white text-md text-center">
 
-            <tbody class="text-white text-md text-center">
-            <tr class="bg-zinc-900 ">
-                <td>23</td>
-                <td class="flex justify-center gap-3 text-center items-center">
-                    <svg class="w-9 h-9 text-orange-500 bg-white px-1 py-1 rounded-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
-                    Walid Lhaila
-                </td>
-                <td>walidlhaila00@gmail.com</td>
-                <td>Filmmaker</td>
-                <td>24 Oct 2024</td>
-                <td class="flex justify-center gap-2 text-center items-center py-5">
-                    <img class="w-8 h-8 rounded-md bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" src="{{url('img/baned.svg')}}" alt="">
-                    <svg class="w-8 h-8 rounded-md text-red-500 bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                </td>
-            </tr>
             </tbody>
 
 
-            <tbody class="text-white text-md text-center">
-            <tr class="bg-zinc-900 ">
-                <td>23</td>
-                <td class="flex justify-center gap-3 text-center items-center">
-                    <svg class="w-9 h-9 text-orange-500 bg-white px-1 py-1 rounded-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
-                    Walid Lhaila
-                </td>
-                <td>walidlhaila00@gmail.com</td>
-                <td>Filmmaker</td>
-                <td>24 Oct 2024</td>
-                <td class="flex justify-center gap-2 text-center items-center py-5">
-                    <img class="w-8 h-8 rounded-md bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" src="{{url('img/baned.svg')}}" alt="">
-                    <svg class="w-8 h-8 rounded-md text-red-500 bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                    </svg>
-                </td>
-            </tr>
-            </tbody>
+
         </table>
 
     </section>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="{{url('js/spinner.js')}}"></script>
+<script src="{{url('js/users.js')}}"></script>
+

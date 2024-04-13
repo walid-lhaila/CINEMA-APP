@@ -74,18 +74,19 @@
                             <span class="sr-only">Close modal</span>
                         </button>
                     </div>
-                    <form class="p-4 md:p-5">
+                    <form action="{{route ('cinemaStore')}}" method="post" id="cinemaForm" class="p-4 md:p-5">
+                        @csrf
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
                                 <label for="name" class="block mb-2 text-sm font-medium text-black">Name</label>
                                 <input type="text" name="name" id="name" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Type Cinema name" required="">
                             </div>
                             <div class="col-span-2">
-                                <label for="adress" class="block mb-2 text-sm font-medium text-black">Adress</label>
-                                <input type="text" name="adress" id="adress" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Adress" required="">
+                                <label for="address" class="block mb-2 text-sm font-medium text-black">Address</label>
+                                <input type="text" name="address" id="address" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Adress" required="">
                             </div>
                         </div>
-                        <button type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
+                        <button type="submit" class="text-white  inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                             Add new Cinema
                         </button>
@@ -147,7 +148,7 @@
                 </a>
 
                 <a class="flex items-center px-4 py-2 mt-5 text-orange-500 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="cinemas">
-                    <svg class="w-5 h-5 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
                     </svg>
 
@@ -180,83 +181,17 @@
         <div class="bg-gray-700 w-full h-[1px] mt-4"></div>
 
 
-<div class="flex flex-wrap gap-5 mt-7">
-        <div class="max-w-sm  rounded-lg shadow bg-gradient-to-t from-zinc-900 ">
-            <a href="#">
-                <img class="rounded-t-lg" src="{{url('img/cinema.jpg')}}" alt="" />
-            </a>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Tokyo</h5>
-                </a>
-                <div class="flex gap-2 mt-3">
-                    <svg class="w-5 h-5 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/>
-                    </svg>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Azib Derai 11 Nahda</p>
-                </div>
-            </div>
-        </div>
+    <div id="cinema-container" class="flex flex-wrap gap-5 mt-7">
 
-        <div class="max-w-sm  rounded-lg shadow bg-gradient-to-t from-zinc-900 ">
-            <a href="#">
-                <img class="rounded-t-lg" src="{{url('img/cinema.jpg')}}" alt="" />
-            </a>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Tokyo</h5>
-                </a>
-                <div class="flex gap-2 mt-3">
-                    <svg class="w-5 h-5 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/>
-                    </svg>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Azib Derai 11 Nahda</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-sm  rounded-lg shadow bg-gradient-to-t from-zinc-900">
-            <a href="#">
-                <img class="rounded-t-lg" src="{{url('img/cinema.jpg')}}" alt="" />
-            </a>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Tokyo</h5>
-                </a>
-                <div class="flex gap-2 mt-3">
-                    <svg class="w-5 h-5 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/>
-                    </svg>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Azib Derai 11 Nahda</p>
-                </div>
-            </div>
-        </div>
-
-    <div class="max-w-sm  rounded-lg shadow bg-gradient-to-t from-zinc-900 ">
-        <a href="#">
-            <img class="rounded-t-lg" src="{{url('img/cinema.jpg')}}" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Tokyo</h5>
-            </a>
-            <div class="flex gap-2 mt-3">
-                <svg class="w-5 h-5 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/>
-                </svg>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Azib Derai 11 Nahda</p>
-            </div>
-        </div>
     </div>
 
+
+</section>
 </div>
 
-    </section>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="{{url('js/form.js')}}"></script>
     <script src="{{url('js/spinner.js')}}"></script>
+    <script src="{{url('js/cinema.js')}}"></script>
+    <script> var cinemasUrl = "{{ route('getAllCinemas') }}" </script>
 

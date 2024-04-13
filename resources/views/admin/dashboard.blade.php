@@ -129,7 +129,7 @@
     </div>
 </aside>
 
-    <section class="bg-black w-full px-5 py-4 overflow-y-hidden">
+    <section class="bg-black w-full px-5 py-2.5 overflow-y-hidden">
         <div class="text-center flex gap-3 items-center">
             <svg class="w-9 h-9 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
@@ -142,7 +142,7 @@
                         <div class="p-4">
                             <h1 class="text-white text-2xl font-medium">Users</h1>
                             <div class= "flex justify-between mt-2 px-2">
-                                <h1 class="text-white font-medium text-2xl">10</h1>
+                                <h1 id="user-count" class="text-white font-medium text-2xl"></h1>
                                 <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 19h4a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-2m-2.236-4a3 3 0 1 0 0-4M3 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                                 </svg>
@@ -213,40 +213,10 @@
                             <th class="py-3">ROLE</th>
                         </thead>
 
-                        <tbody class="text-md text-white">
-                            <td>215</td>
-                            <td>Walid Lhaila</td>
-                            <td>walidlhaila00@gmail.com</td>
-                            <td class="py-3">client</td>
+                        <tbody id="latest-users" class="text-md text-white">
+
                         </tbody>
 
-                        <tbody class="text-md text-white">
-                            <td>215</td>
-                            <td>Walid Lhaila</td>
-                            <td>walidlhaila00@gmail.com</td>
-                            <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                            <td>215</td>
-                            <td>Walid Lhaila</td>
-                            <td>walidlhaila00@gmail.com</td>
-                            <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                            <td>215</td>
-                            <td>Walid Lhaila</td>
-                            <td>walidlhaila00@gmail.com</td>
-                            <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                            <td>215</td>
-                            <td>Walid Lhaila</td>
-                            <td>walidlhaila00@gmail.com</td>
-                            <td class="py-3">client</td>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -280,39 +250,10 @@
                         </thead>
 
                         <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
+
                         </tbody>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -342,45 +283,15 @@
                     <table class="w-full text-center">
                         <thead class="text-gray-200 text-sm border-b border-gray-700">
                         <th>ID</th>
-                        <th>FULL NAME</th>
-                        <th>EMAIL</th>
-                        <th class="py-3">ROLE</th>
+                        <th>NAME</th>
+                        <th>ADDRESS</th>
+                        <th class="py-3">CREATED</th>
                         </thead>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
+                        <tbody id="latest-cinemas"  class="text-md text-white">
+
                         </tbody>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -459,6 +370,7 @@
         </div>
     </section>
 </div>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="{{url('js/spinner.js')}}"></script>
+<script src="{{url('js/dashboard.js')}}"></script>
 
