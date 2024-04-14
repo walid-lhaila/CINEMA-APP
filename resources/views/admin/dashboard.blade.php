@@ -153,7 +153,7 @@
                         <div class="p-4">
                             <h1 class="text-white text-2xl font-medium">Cinemas</h1>
                             <div class= "flex justify-between mt-2 px-2">
-                                <h1 class="text-white font-medium text-2xl">10</h1>
+                                <h1 id="cinema-count" class="text-white font-medium text-2xl"></h1>
                                 <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
                                 </svg>
@@ -164,7 +164,7 @@
                         <div class="p-4">
                             <h1 class="text-white text-2xl font-medium">Categories</h1>
                             <div class= "flex justify-between mt-2 px-2">
-                                <h1 class="text-white font-medium text-2xl">10</h1>
+                                <h1 id="category-count" class="text-white font-medium text-2xl">0</h1>
                                 <svg class="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -175,7 +175,7 @@
                         <div class="p-4">
                             <h1 class="text-white text-2xl font-medium">Movies</h1>
                             <div class= "flex justify-between mt-2 px-2">
-                                <h1 class="text-white font-medium text-2xl">10</h1>
+                                <h1 id="movie-count" class="text-white font-medium text-2xl">0</h1>
                                 <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm0 0-4 4m5 0H4m1 0 4-4m1 4 4-4m-4 7v6l4-3-4-3Z"/>
                                 </svg>
@@ -249,7 +249,7 @@
                         <th class="py-3">ROLE</th>
                         </thead>
 
-                        <tbody class="text-md text-white">
+                        <tbody id="latest-movies" class="text-md text-white">
 
                         </tbody>
 
@@ -321,45 +321,14 @@
                     <table class="w-full text-center">
                         <thead class="text-gray-200 text-sm border-b border-gray-700">
                         <th>ID</th>
-                        <th>FULL NAME</th>
-                        <th>EMAIL</th>
-                        <th class="py-3">ROLE</th>
+                        <th>NAME</th>
+                        <th class="py-3">CREATED</th>
                         </thead>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
+                        <tbody id="latest-categories" class="text-md text-white">
+
                         </tbody>
 
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
-
-                        <tbody class="text-md text-white">
-                        <td>215</td>
-                        <td>Walid Lhaila</td>
-                        <td>walidlhaila00@gmail.com</td>
-                        <td class="py-3">client</td>
-                        </tbody>
                     </table>
                 </div>
             </div>

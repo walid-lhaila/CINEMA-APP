@@ -184,4 +184,10 @@
      width: 50%;
  }
 
+ .deleteCategory {
+     color: red;
+ }
+ .updateCategory {
+     color: mediumblue;
+ }
 

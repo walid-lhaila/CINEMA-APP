@@ -24,6 +24,22 @@ class AdminController extends Controller
     {
         return response()->json(['userCount' => $this->adminService->getUserCount()]);
     }
+    public function getCinemaCount()
+    {
+        return response()->json(['cinemaCount' => $this->adminService->getCinemaCount()]);
+    }
+    public function getCategoryCount()
+    {
+        return response()->json(['categoryCount' => $this->adminService->getCategoryCount()]);
+    }
+    public function getMovieCount()
+    {
+        return response()->json(['movieCount' => $this->adminService->getMovieCount()]);
+    }
+
+
+
+
     public function getLatestUsers()
     {
         $latestUsers = $this->adminService->getLatestUsers();
@@ -34,6 +50,22 @@ class AdminController extends Controller
         $latestCinemas = $this->adminService->getLatestCinemas();
         return response()->json($latestCinemas);
     }
+    public function getLatestCategories()
+    {
+        $latestCategories = $this->adminService->getLatestCategories();
+        return response()->json($latestCategories);
+    }
+    public function getLatestMovies()
+    {
+        $latestMovies = $this->adminService->getLatestMovies();
+    }
+
+
+
+
+
+
+
     public function movies()
     {
         return view('admin.movies');

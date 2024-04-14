@@ -13,7 +13,53 @@ $(document).ready(function() {
         });
     }
     updateUserCount();
-    setInterval(updateUserCount, 5000);
+    setInterval(updateUserCount, 2000);
+
+
+    function updateCinemaCount() {
+        $.ajax({
+            url: '/getCinemaCount',
+            type: 'GET',
+            success: function(response) {
+                    $('#cinema-count').text(response.cinemaCount);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    updateCinemaCount();
+    setInterval(updateCinemaCount, 2000);
+
+    function updateCategoryCount() {
+        $.ajax({
+            url: '/getCategoryCount',
+            type: 'GET',
+            success: function (response) {
+                $('#category-count').text(response.categoryCount);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    updateCategoryCount();
+    setInterval(updateCategoryCount, 2000);
+
+    function updateMovieCount(){
+        $.ajax({
+            url: '/getMovieCount',
+            type: 'GET',
+            success: function (response) {
+                $('#cinema-count').text(response.cinemaCount);
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText)
+            }
+        });
+    }
+    updateMovieCount();
+    setInterval(updateMovieCount, 2000);
 
     function getLatestUsers() {
         $('#latest-users').empty();
@@ -81,4 +127,61 @@ $(document).ready(function() {
     }
     getLatestCinemas();
     setInterval(getLatestCinemas, 10000);
+
+     function getLatestCategories(){
+        $.ajax({
+            url: 'getLatestCategories',
+            type: 'GET',
+            success: function (response) {
+                $('#latest-categories').empty(); // Clear existing categories
+                response.forEach(function(category) {
+                    var categoryHTML = `
+                   <tr style="display: none;">
+                         <td>${category.id}</td>
+                         <td>${category.name}</td>
+                            <td class="py-3">${formatDate(category.created_at)}</td>
+                    </tr>
+                    `;
+                    $('#latest-categories').append(categoryHTML);
+                });
+                $('#latest-categories tr').each(function(index) {
+                    $(this).fadeIn(1000 * index);
+                });
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    getLatestCategories();
+    setInterval(getLatestCategories, 10000);
+
+    function getLatestMovies() {
+        $.ajax({
+            url: '/getLatestMovie',
+            type: 'GET',
+            success: function (response) {
+                $('#latest-movies').empty();
+                response.forEach(function(movie) {
+                    var movieHTML = `
+                        <tr style="display: none;">
+                         <td>${movie.id}</td>
+                         <td>${movie.title}</td>
+                          <td>${movie.category.name}</td>
+                            <td class="py-3">${formatDate(movie.created_at)}</td>
+                    </tr>
+                    `;
+                    $('#latest-movies').append(movieHTML);
+                });
+                $('#latest-movies tr').each(function(index) {
+                    $(this).fadeIn(1000 * index);
+                });
+            },
+            error: function (xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    getLatestMovies();
+    setInterval(getLatestMovies, 10000);
 });

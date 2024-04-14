@@ -35,8 +35,15 @@ Route::get('home', [\App\Http\Controllers\ClientController::class, 'home']);
 
 Route::get('dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard']);
 Route::get('/getUserCount', [\App\Http\Controllers\AdminController::class, 'getUserCount'])->name('getUserCount');
+Route::get('/getCinemaCount', [\App\Http\Controllers\AdminController::class, 'getCinemaCount'])->name('getCinemaCount');
+Route::get('/getCategoryCount', [\App\Http\Controllers\AdminController::class, 'getCategoryCount'])->name('getCategoryCount');
+Route::get('/getMovieCount', [\App\Http\Controllers\AdminController::class, 'getMovieCount'])->name('getMovieCount');
+
+
 Route::get('getLatestUsers', [\App\Http\Controllers\AdminController::class, 'getLatestUsers'])->name('getLatestUsers');
 Route::get('getLatestCinemas', [\App\Http\Controllers\AdminController::class, 'getLatestCinemas'])->name('getLatestCinemas');
+Route::get('getLatestCategories', [\App\Http\Controllers\AdminController::class, 'getLatestCategories'])->name('getLatestCategories');
+Route::get('getLatestMovie', [\App\Http\Controllers\AdminController::class, 'getLatestMovies'])->name('getLatestMovies');
 
 
 
