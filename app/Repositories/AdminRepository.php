@@ -8,33 +8,10 @@ use App\Models\User;
 
 class AdminRepository
 {
-    public function categoryCreate(array $data)
-    {
-        return Category::create($data);
-    }
-    public function getAllCategories()
-    {
-        return Category::all();
-    }
-    public function deleteCategory($categoryId)
-    {
-        return Category::destroy($categoryId);
-    }
 
 
 
-    public function cinemaCreate(array $data)
-    {
-        return Cinema::create($data);
-    }
-    public function getAllCinema()
-    {
-        return Cinema::all();
-    }
-    public function deleteCinema($cinemaId)
-    {
-        return Cinema::destroy($cinemaId);
-    }
+
 
 
 

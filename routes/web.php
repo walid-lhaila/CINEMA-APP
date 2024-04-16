@@ -54,17 +54,16 @@ Route::get('getAllUsers', [\App\Http\Controllers\AdminController::class, 'getAll
 
 Route::get('movies', [\App\Http\Controllers\AdminController::class, 'movies']);
 
-Route::post('cinemaStore', [\App\Http\Controllers\AdminController::class, 'cinemaStore'])->name('cinemaStore');
 Route::get('cinemas', [\App\Http\Controllers\AdminController::class, 'cinemas'])->name('cinemas');
-Route::get('getAllCinemas', [\App\Http\Controllers\AdminController::class, 'getAllCinemas'])->name('getAllCinemas');
-Route::delete('/cinemas/{cinema}', [\App\Http\Controllers\AdminController::class, 'deleteCinema'])->name('deleteCinema');
+Route::post('cinemaStore', [\App\Http\Controllers\CinemaController::class, 'cinemaStore'])->name('cinemaStore');
+Route::get('getAllCinemas', [\App\Http\Controllers\CinemaController::class, 'getAllCinemas'])->name('getAllCinemas');
+Route::delete('/cinemas/{cinema}', [\App\Http\Controllers\CinemaController::class, 'deleteCinema'])->name('deleteCinema');
 
 
-
-Route::post('categoryStore', [\App\Http\Controllers\AdminController::class, 'categoryStore'])->name('categoryStore');
 Route::get('categories', [\App\Http\Controllers\AdminController::class, 'categories'])->name('categories');
-Route::get('getAllCategories', [\App\Http\Controllers\AdminController::class, 'getAllCategories'])->name('getAllCategories');
-Route::delete('/categories/{category}', [\App\Http\Controllers\AdminController::class, 'deleteCategory'])->name('categories.delete');
+Route::post('categoryStore', [\App\Http\Controllers\CategoryController::class, 'categoryStore'])->name('categoryStore');
+Route::get('getAllCategories', [\App\Http\Controllers\CategoryController::class, 'getAllCategories'])->name('getAllCategories');
+Route::delete('/categories/{category}', [\App\Http\Controllers\CategoryController::class, 'deleteCategory'])->name('categories.delete');
 
 
 

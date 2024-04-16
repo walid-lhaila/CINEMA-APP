@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cinema;
+use App\Services\CinemaService;
 use Illuminate\Http\Request;
 
 class CinemaController extends Controller
@@ -10,56 +11,34 @@ class CinemaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+
+    protected $cinemaService;
+    public function __construct (CinemaService $cinemaService){
+        $this->cinemaService = $cinemaService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function cinemaStore(Request $request)
     {
-        //
+        $cinemaData = $request->only('name', 'address');
+        $cinema = $this->cinemaService->createCinema($cinemaData);
+        return redirect()->route('categories')->with('success', 'Category created successfully.');
+    }
+    public function getAllCinemas()
+    {
+        $cinemas = $this->cinemaService->getAllCinema();
+        return response()->json($cinemas);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function deleteCinema($cinemaId)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Cinema $cinema)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cinema $cinema)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Cinema $cinema)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Cinema $cinema)
-    {
-        //
+        if(!$cinemaId) {
+            return response()->json(['error' => 'cinemaId not found']);
+        }
+        $deleted = $this->cinemaService->deleteCinema($cinemaId);
+        if ($deleted) {
+            return response()->json(['success' => 'cinema deleted']);
+        } else {
+            return response()->json(['error' => 'cinema not deleted']);
+        }
     }
 }
