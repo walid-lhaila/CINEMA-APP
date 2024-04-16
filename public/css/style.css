@@ -187,7 +187,12 @@
  .deleteCategory {
      color: red;
  }
- .updateCategory {
-     color: mediumblue;
- }
-
+.updateCategory {
+    color: blue;
+}
+.deleteCinema {
+    color: red;
+}
+.updateCinema {
+    color: blue;
+}
