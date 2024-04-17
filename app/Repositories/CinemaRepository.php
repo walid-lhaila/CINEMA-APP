@@ -2,8 +2,9 @@
 namespace App\Repositories;
 
 use App\Models\Cinema;
+use App\Repositories\Interfaces\CinemaRepositoryInterface;
 
-class CinemaRepository
+class CinemaRepository implements CinemaRepositoryInterface
 {
     public function cinemaCreate(array $data)
     {

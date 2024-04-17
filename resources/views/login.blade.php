@@ -33,12 +33,11 @@
 
             <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
         </div>
-        <form action="" method="post">
+        <form action="{{ route('login.submit') }}" method="post">
             @csrf
-
             <div class="mt-4">
                 <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-400" for="LoggingEmailAddress">Email Address</label>
-                <input id="" name="email" class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-orange-50 dark:text-black dark:border-orange-600 focus:border-orange-400 focus:ring-opacity-40 dark:focus:border-orange-300 focus:outline-none focus:ring" type="email" />
+                <input  name="email" class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-orange-50 dark:text-black dark:border-orange-600 focus:border-orange-400 focus:ring-opacity-40 dark:focus:border-orange-300 focus:outline-none focus:ring" type="email" />
             </div>
 
             <div class="mt-4">
@@ -47,11 +46,11 @@
                     <a href="#" class="text-xs text-gray-500 dark:text-gray-400 hover:underline">Forget Password?</a>
                 </div>
 
-                <input id="" name="password" class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-orange-50 dark:text-black dark:border-orange-600 focus:border-orange-400 focus:ring-opacity-40 dark:focus:border-orange-300 focus:outline-none focus:ring" type="password" />
+                <input name="password" class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-orange-50 dark:text-black dark:border-orange-600 focus:border-orange-400 focus:ring-opacity-40 dark:focus:border-orange-300 focus:outline-none focus:ring" type="password" />
             </div>
 
             <div class="mt-6">
-                <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                <button type="submit" class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
                     Sign In
                 </button>
             </div>

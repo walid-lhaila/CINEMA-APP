@@ -2,9 +2,10 @@
 namespace App\Services;
 
 use App\Repositories\RegisterRepository;
+use App\Services\Interfaces\RegisterServiceInterface;
 use http\Client\Curl\User;
 
-class RegisterService
+class RegisterService implements RegisterServiceInterface
 {
     protected $registerRepository;
     public function __construct(RegisterRepository $registerRepository)

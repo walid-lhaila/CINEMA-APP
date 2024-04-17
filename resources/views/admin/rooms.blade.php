@@ -72,7 +72,7 @@
                     <!-- Modal header -->
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 class="text-lg font-semibold text-black">
-                            Create New Category
+                            Create New Room
                         </h3>
                         <button id="close" type="button" class="text-gray-600 bg-transparent hover:bg-zinc-600 duration-300 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="crud-modal">
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -82,7 +82,7 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <form action="{{ route('categoryStore') }}" method="post" id="categoryForm" class="p-4 md:p-5">
+                    <form action="" method="post" id="categoryForm" class="p-4 md:p-5">
                         @csrf
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
@@ -92,7 +92,7 @@
                         </div>
                         <button  type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                            Add new Category
+                            Add new Room
                         </button>
                     </form>
                 </div>
@@ -179,9 +179,9 @@
                 <svg class="w-9 h-9 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h1 class="text-3xl text-white font-bold font-mono mt-1">Categories</h1>
+                <h1 class="text-3xl text-white font-bold font-mono mt-1">Rooms</h1>
             </div>
-            <button id="btn" class="text-white bg-orange-500 hover:bg-orange-600 font-bold text-sm px-3 py-2 rounded-lg duration-500">Add Category</button>
+            <button id="btn" class="text-white bg-orange-500 hover:bg-orange-600 font-bold text-sm px-3 py-2 rounded-lg duration-500">Add Room</button>
         </div>
         <div class="bg-gray-700 w-full h-[1px] mt-4"></div>
 

@@ -3,8 +3,9 @@ namespace App\Services;
 
 use App\Models\Category;
 use App\Repositories\CategoryRepository;
+use App\Services\Interfaces\CategoryServiceInterface;
 
-class CategoryService
+class CategoryService implements CategoryServiceInterface
 {
     protected $categoryRepository;
     public function __construct(CategoryRepository $categoryRepository){

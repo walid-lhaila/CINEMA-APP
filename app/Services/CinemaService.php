@@ -3,8 +3,9 @@ namespace App\Services;
 
 use App\Models\Cinema;
 use App\Repositories\CinemaRepository;
+use App\Services\Interfaces\CinemaServiceInterface;
 
-class CinemaService
+class CinemaService implements CinemaServiceInterface
 {
     protected $cinemaRepository;
     public function __construct(CinemaRepository $cinemaRepository){

@@ -5,16 +5,10 @@ use App\Models\Category;
 use App\Models\Cinema;
 use App\Models\Movie;
 use App\Models\User;
+use App\Repositories\Interfaces\AdminRepositoryInterface;
 
-class AdminRepository
+class AdminRepository implements AdminRepositoryInterface
 {
-
-
-
-
-
-
-
     public function getAllUsers()
     {
         return User::all();

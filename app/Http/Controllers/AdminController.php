@@ -16,6 +16,7 @@ class AdminController extends Controller
     public function __construct(AdminService $adminService){
         $this->adminService = $adminService;
     }
+
     public function dashboard()
     {
         return view('admin.dashboard');
@@ -70,30 +71,30 @@ class AdminController extends Controller
     {
         return view('admin.movies');
     }
-
+    public function rooms()
+    {
+        return view('admin.rooms');
+    }
     public function users()
     {
         return view('admin.users');
     }
-    public function getAllUsers()
-    {
-        $users = $this->adminService->getAllUsers();
-        return response()->json($users);
-    }
-
 
     public function cinemas()
     {
         return view('admin.cinemas');
     }
 
-
     public function categories()
     {
         return view('admin.categories');
     }
 
-
+    public function getAllUsers()
+    {
+        $users = $this->adminService->getAllUsers();
+        return response()->json($users);
+    }
 
 
 

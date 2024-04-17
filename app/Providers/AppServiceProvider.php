@@ -5,10 +5,12 @@
     use App\Repositories\AdminRepository;
     use App\Repositories\CategoryRepository;
     use App\Repositories\CinemaRepository;
+    use App\Repositories\LoginRepository;
     use App\Repositories\RegisterRepository;
     use App\Services\AdminService;
     use App\Services\CategoryService;
     use App\Services\CinemaService;
+    use App\Services\LoginService;
     use App\Services\RegisterService;
     use Illuminate\Support\ServiceProvider;
 
@@ -52,6 +54,15 @@
                 CategoryService::class,
                 function ($app) {
                     return new CategoryService(new CategoryRepository());
+                }
+            );
+        }
+        public function login(): void
+        {
+            $this->app->bind(
+                LoginService::class,
+                function ($app) {
+                    return new LoginService(new LoginRepository());
                 }
             );
         }

@@ -3,8 +3,9 @@ namespace App\Repositories;
 
 use App\Models\Client;
 use App\Models\Filmmaker;
+use App\Repositories\Interfaces\RegisterRepositoryInterface;
 
-class RegisterRepository
+class RegisterRepository implements RegisterRepositoryInterface
 {
      public function filmmakerCreate(array $data)
         {

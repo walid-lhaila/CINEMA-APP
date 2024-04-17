@@ -1,58 +1,5 @@
 @extends('header')
 
-<style>
-    #spinner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-
-    .spinner-border-gray {
-        width: 4rem;
-        height: 4rem;
-        border: 4px solid #ff6613;
-        border-radius: 50%;
-        border-color: #ff6613 transparent transparent transparent;
-        animation: spin-gray 0.6s linear infinite;
-    }
-
-    .spinner-border-orange {
-        position: absolute;
-        width: 3rem;
-        height: 3rem;
-        border: 4px solid #bbbbbb;
-        border-radius: 50%;
-        border-color: #bbbbbb transparent transparent transparent;
-        animation: spin-orange 0.6s linear infinite;
-    }
-
-    @keyframes spin-gray {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes spin-orange {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg);
-        }
-    }
-
-</style>
-
-
-<div id="spinner">
-    <div class="spinner-border-gray" role="status"></div>
-    <div class="spinner-border-orange" role="status"></div>
-</div>
-
 
 <div class="flex justify-between h-[70px] w-full z-10 items-center bg-black px-10">
     <div class="z-10">

@@ -20,6 +20,8 @@ Route::get('spinner', function(){
 
 Route::post('/filmmakers/register', [\App\Http\Controllers\RegisterController::class, 'filmmakerStore'])->name('filmmakers.store');
 Route::post('/clients/register', [\App\Http\Controllers\RegisterController::class, 'clientStore'])->name('clients.store');
+Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login.submit');
+
 
 
 
@@ -53,6 +55,7 @@ Route::get('getAllUsers', [\App\Http\Controllers\AdminController::class, 'getAll
 
 
 Route::get('movies', [\App\Http\Controllers\AdminController::class, 'movies']);
+Route::get('rooms', [\App\Http\Controllers\AdminController::class, 'rooms'])->name('rooms');
 
 Route::get('cinemas', [\App\Http\Controllers\AdminController::class, 'cinemas'])->name('cinemas');
 Route::post('cinemaStore', [\App\Http\Controllers\CinemaController::class, 'cinemaStore'])->name('cinemaStore');

@@ -1,11 +1,11 @@
 <?php
 namespace App\Services;
 
-use App\Models\Category;
-use App\Models\Cinema;
-use App\Repositories\AdminRepository;
 
-class AdminService
+use App\Repositories\AdminRepository;
+use App\Services\Interfaces\AdminServiceInterface;
+
+class AdminService implements AdminServiceInterface
 {
     protected $adminRepository;
 
