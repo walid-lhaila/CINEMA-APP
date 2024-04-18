@@ -73,14 +73,14 @@
 
     <div class="flex flex-col justify-between flex-1 mt-6">
         <nav>
-            <a class="flex items-center px-4 py-2 text-orange-500 rounded-lg " href="dashboard">
+            <div id="dashboard" class="flex items-center px-4 py-2 text-orange-500 rounded-lg cursor-pointer">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
                 </svg>
 
 
                 <span class="mx-4 font-medium">Dashboard</span>
-            </a>
+            </div>
 
             <a class="flex items-center px-4 py-2 mt-5 text-gray-300 transition-colors duration-300 transform rounded-lg hover:text-orange-500" href="users">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,16 @@
                 <span class="mx-4 font-medium">Cinemas</span>
             </a>
 
-            <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300 transform rounded-lg " href="#">
+            <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="rooms">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
+                </svg>
+
+
+                <span class="mx-4 font-medium">Rooms</span>
+            </a>
+
+            <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300 transform rounded-lg " href="login">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"/>
                 </svg>
@@ -342,4 +351,5 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="{{url('js/spinner.js')}}"></script>
 <script src="{{url('js/dashboard.js')}}"></script>
+<script src="{{url('js/sideBar.js')}}"></script>
 

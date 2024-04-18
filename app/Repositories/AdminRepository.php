@@ -13,7 +13,10 @@ class AdminRepository implements AdminRepositoryInterface
     {
         return User::all();
     }
-
+    public function getAllCinemas()
+    {
+        return Cinema::all();
+    }
 
     public function getUserCount()
     {

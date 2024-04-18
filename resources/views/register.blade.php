@@ -95,7 +95,7 @@
                         </form>
                         <div class="flex justify-center items-center mt-10 gap-3">
                             <div class="w-48 h-[2px] bg-gray-200"></div>
-                            <a href=""><div class="text-gray-500 text-sm hover:underline">Or Sign in</div></a>
+                            <a href="{{url('/login')}}"><div class="text-gray-500 text-sm hover:underline">Or Sign in</div></a>
                             <div class="w-48 h-[2px] bg-gray-200"></div>
                         </div>
                     </div>

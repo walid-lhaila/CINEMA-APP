@@ -187,9 +187,9 @@
  .deleteCategory {
      color: red;
  }
-.updateCategory {
-    color: blue;
-}
+ .deleteRoom {
+     color: red;
+ }
 .deleteCinema {
     color: red;
 }

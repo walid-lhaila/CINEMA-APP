@@ -73,7 +73,8 @@ class AdminController extends Controller
     }
     public function rooms()
     {
-        return view('admin.rooms');
+        $cinemas = $this->adminService->getAllCinemas();
+        return view('admin.rooms', compact('cinemas'));
     }
     public function users()
     {

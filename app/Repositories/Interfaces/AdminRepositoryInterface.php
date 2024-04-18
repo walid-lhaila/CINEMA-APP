@@ -5,6 +5,7 @@ namespace App\Repositories\Interfaces;
 interface AdminRepositoryInterface
 {
     public function getAllUsers();
+    public function getAllCinemas();
     public function getUserCount();
     public function getCinemaCount();
     public function getCategoryCount();

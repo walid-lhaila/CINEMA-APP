@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Services\Interfaces\RoomServiceInterface;
+use App\Services\RoomService;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -10,56 +12,54 @@ class RoomController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    protected $roomService;
+    public function __construct(RoomService $roomService){
+        $this->roomService = $roomService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->merge(['name' => $this->generateRoomName()]);
+
+        $data = $request->validate([
+            'name' => 'required|string',
+            'seats' => 'required|numeric|min:10',
+            'cinema_id' => 'required|exists:cinemas,id',
+        ]);
+        $room = $this->roomService->createRoom($data);
+        return response()->json(['success' => true, 'room' => $room]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Room $room)
+    private function generateRoomName()
     {
-        //
+        $lastRoom = Room::latest()->first();
+        if ($lastRoom) {
+            $lastChar = substr($lastRoom->name, -1);
+            return 'Room ' . chr(ord($lastChar) + 1);
+        } else {
+            return 'Room A';
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Room $room)
+    public function getAllRooms()
     {
-        //
+        $rooms = $this->roomService->getAllRooms();
+        return response()->json($rooms);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Room $room)
+    public function deleteRoom($roomId)
     {
-        //
+        if(!$roomId){
+            return response()->json(['success' => false, 'message' => 'Room not found']);
+        }
+        $deleted = $this->roomService->deleteRoom($roomId);
+
+        if($deleted){
+            return response()->json(['success' => 'room deleted successfully']);
+        }else {
+            return response()->json(['success' => false, 'message' => 'Room not deleted']);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Room $room)
-    {
-        //
-    }
+
 }

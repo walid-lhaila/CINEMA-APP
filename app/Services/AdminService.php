@@ -54,6 +54,10 @@ class AdminService implements AdminServiceInterface
     {
         return $this->adminRepository->getAllUsers();
     }
+    public function getAllCinemas()
+    {
+        return $this->adminRepository->getAllCinemas();
+    }
 
 }
 

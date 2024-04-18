@@ -5,16 +5,15 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[-70px] z-10 text-white font-medium flex justify-center items-center text-sm  gap-5">
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="home">HOME</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="allMovie">MOVIES</a>
-    </nav>
+
     <div class="z-10">
-        <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400 duration-500 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400 duration-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
         </svg>
     </div>
 </div>
+
+
 <div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image5.jpg');">
     <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center bg-black z-50 duration-300">
         <div class="flex justify-center items-center">
@@ -26,7 +25,7 @@
 <div class="border-dashed border-4 border-black mt-5 "></div>
 
 <div class="flex justify-end px-6 py-5">
-    <button class="bg-orange-500 text-white text-lg rounded-md font-bold px-3 py-1 hover:bg-orange-600 duration-300">Add Movie</button>
+    <a href="formAddMovie"><button class="bg-orange-500 text-white text-lg rounded-md font-bold px-3 py-1 hover:bg-orange-600 duration-300">Add Movie</button></a>
 </div>
 
 <div class="w-[80%] mt-28 mx-auto">

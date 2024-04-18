@@ -48,14 +48,15 @@ Route::get('getLatestCategories', [\App\Http\Controllers\AdminController::class,
 Route::get('getLatestMovie', [\App\Http\Controllers\AdminController::class, 'getLatestMovies'])->name('getLatestMovies');
 
 
-
 Route::get('users', [\App\Http\Controllers\AdminController::class, 'users']);
 Route::get('getAllUsers', [\App\Http\Controllers\AdminController::class, 'getAllUsers'])->name('getAllUsers');
 
-
-
 Route::get('movies', [\App\Http\Controllers\AdminController::class, 'movies']);
+
 Route::get('rooms', [\App\Http\Controllers\AdminController::class, 'rooms'])->name('rooms');
+Route::post('roomStore', [\App\Http\Controllers\RoomController::class, 'store'])->name('roomStore');
+Route::get('getAllRooms', [\App\Http\Controllers\RoomController::class, 'getAllRooms'])->name('getAllRooms');
+Route::delete('/rooms/{room}', [\App\Http\Controllers\RoomController::class, 'deleteRoom'])->name('rooms.delete');
 
 Route::get('cinemas', [\App\Http\Controllers\AdminController::class, 'cinemas'])->name('cinemas');
 Route::post('cinemaStore', [\App\Http\Controllers\CinemaController::class, 'cinemaStore'])->name('cinemaStore');
@@ -70,6 +71,5 @@ Route::delete('/categories/{category}', [\App\Http\Controllers\CategoryControlle
 
 
 
-
-
 Route::get('addMovies', [\App\Http\Controllers\FilmmakerController::class, 'addMovie']);
+Route::get('formAddMovie', [\App\Http\Controllers\FilmmakerController::class, 'formAddMovie']);

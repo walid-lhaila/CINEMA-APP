@@ -11,4 +11,5 @@ interface AdminServiceInterface
     public function getLatestCategories();
     public function getLatestMovies();
     public function getAllUsers();
+    public function getAllCinemas();
 }

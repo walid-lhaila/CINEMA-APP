@@ -2,16 +2,19 @@
 
     namespace App\Providers;
 
+    use App\Http\Controllers\RoomController;
     use App\Repositories\AdminRepository;
     use App\Repositories\CategoryRepository;
     use App\Repositories\CinemaRepository;
     use App\Repositories\LoginRepository;
     use App\Repositories\RegisterRepository;
+    use App\Repositories\RoomRepository;
     use App\Services\AdminService;
     use App\Services\CategoryService;
     use App\Services\CinemaService;
     use App\Services\LoginService;
     use App\Services\RegisterService;
+    use App\Services\RoomService;
     use Illuminate\Support\ServiceProvider;
 
     class AppServiceProvider extends ServiceProvider
@@ -63,6 +66,15 @@
                 LoginService::class,
                 function ($app) {
                     return new LoginService(new LoginRepository());
+                }
+            );
+        }
+        public function room(): void
+        {
+            $this->app->bind(
+                RoomService::class,
+                function ($app) {
+                    return new RoomService(new RoomRepository());
                 }
             );
         }

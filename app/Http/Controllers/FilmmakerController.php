@@ -10,4 +10,8 @@ class FilmmakerController extends Controller
     {
         return view('filmmaker.addMovies');
     }
+
+    public function formAddMovie() {
+        return view('filmmaker.formAddMovie');
+    }
 }

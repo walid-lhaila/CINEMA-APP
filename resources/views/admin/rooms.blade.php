@@ -82,15 +82,25 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <form action="" method="post" id="categoryForm" class="p-4 md:p-5">
+                    <form action="{{ route('roomStore') }}" method="post" id="roomForm" class="p-4 md:p-5">
                         @csrf
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
-                                <label for="name" class="block mb-2 text-sm font-medium text-black">Name</label>
-                                <input type="text" name="name" id="name" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " placeholder="Type Category name" required="">
+                                <label for="seats" class="block mb-2 text-sm font-medium text-black">Seats</label>
+                                <input type="number" name="seats" id="seats" class=" border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-2.5  dark:placeholder-gray-400 " min="10" required="">
+                            </div>
+                            <div class="col-span-2">
+                                <label for="cinema_id" class="block mb-2 text-sm font-medium text-black">Cinema</label>
+                                <select name="cinema_id" id="cinema_id" class="border text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-2.5 bg-white" required>
+                                    <!-- You can add options dynamically here -->
+                                    <option value="" disabled selected>Select Cinema</option>
+                                    @foreach($cinemas as $cinema)
+                                    <option value="{{ $cinema->id }}">{{ $cinema->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <button  type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
+                        <button type="submit" class="text-white inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center ">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                             Add new Room
                         </button>
@@ -135,7 +145,7 @@
                     <span class="mx-4 font-medium">Users</span>
                 </a>
 
-                <a class="flex items-center px-4 py-2 mt-5 text-orange-500 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="categories">
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="categories">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
@@ -161,6 +171,15 @@
                     <span class="mx-4 font-medium">Cinemas</span>
                 </a>
 
+                <a class="flex items-center px-4 py-2 mt-5 text-orange-500 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="rooms">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"/>
+                    </svg>
+
+
+                    <span class="mx-4 font-medium">Rooms</span>
+                </a>
+
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:text-orange-500 transition-colors duration-300  rounded-lg " href="#">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"/>
@@ -169,6 +188,7 @@
 
                     <span class="mx-4 font-medium">Log out</span>
                 </a>
+
             </nav>
         </div>
     </aside>
@@ -185,7 +205,8 @@
         </div>
         <div class="bg-gray-700 w-full h-[1px] mt-4"></div>
 
-        <div id="category-container" class="mt-7 flex flex-wrap gap-5">
+        <div id="room-container" class="mt-7 flex flex-wrap gap-5">
+
         </div>
 
 
@@ -195,4 +216,5 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="{{url('js/form.js')}}"></script>
 <script src="{{url('js/spinner.js')}}"></script>
+<script src="{{url('js/room.js')}}"></script>
 
