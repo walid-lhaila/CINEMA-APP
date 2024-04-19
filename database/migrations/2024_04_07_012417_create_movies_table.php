@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->dateTime('debut');
-            $table->dateTime('fin');
+            $table->string('image');
+            $table->string('trailer');
+            $table->date('date');
             $table->unsignedBigInteger('filmmaker_id');
             $table->foreign('filmmaker_id')->references('id')->on('filmmakers')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('cinema_id');
+            $table->foreign('cinema_id')->references('id')->on('cinemas')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('category_id');

@@ -73,3 +73,5 @@ Route::delete('/categories/{category}', [\App\Http\Controllers\CategoryControlle
 
 Route::get('addMovies', [\App\Http\Controllers\FilmmakerController::class, 'addMovie']);
 Route::get('formAddMovie', [\App\Http\Controllers\FilmmakerController::class, 'formAddMovie']);
+Route::get('/get-rooms', [\App\Http\Controllers\FilmmakerController::class, 'getRoomsByCinema'])->name('get-rooms');
+
