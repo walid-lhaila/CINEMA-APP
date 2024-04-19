@@ -12,9 +12,11 @@ class Movie extends Model
     protected $fillable = [
         'title',
         'description',
-        'start',
-        'end',
+        'image',
+        'trailer',
+        'date',
         'filmmaker_id',
+        'cinema_id',
         'room_id',
         'category_id'
     ];
@@ -22,6 +24,11 @@ class Movie extends Model
     public function filmmaker()
     {
         return $this->belongsTo(Filmmaker::class);
+    }
+
+    public function cinema()
+    {
+        return $this->belongsTo(Cinema::class);
     }
 
     public function room()

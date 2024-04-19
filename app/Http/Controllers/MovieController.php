@@ -3,63 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Services\MovieService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+
+    protected $movieService;
+    public function __construct(MovieService $movieService){
+        $this->movieService = $movieService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function createMovie(Request $request) {
+        $user = Auth::user();
+        if (!$user) {
+            return view('login')->with('error', 'You must be logged in to add a movie.');
+        }
+
+        $data = $request->only(['title', 'description', 'date', 'cinema_id', 'room_id', 'category_id', 'image', 'trailer']);
+        $filmmakerId = $user->filmmaker->id;
+        $movie = $this->movieService->movieCreate($data, $filmmakerId);
+        return view('filmmaker.addMovies')->with('success', 'Movie added successfully.');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function getMovies(){
+        $movies = $this->movieService->getMovies();
+        return view('filmmaker.addMovies', compact('movies'))->with('success', 'Movies added successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Movie $movie)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Movie $movie)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Movie $movie)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Movie $movie)
-    {
-        //
-    }
 }

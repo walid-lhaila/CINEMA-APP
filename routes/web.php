@@ -41,12 +41,10 @@ Route::get('/getCinemaCount', [\App\Http\Controllers\AdminController::class, 'ge
 Route::get('/getCategoryCount', [\App\Http\Controllers\AdminController::class, 'getCategoryCount'])->name('getCategoryCount');
 Route::get('/getMovieCount', [\App\Http\Controllers\AdminController::class, 'getMovieCount'])->name('getMovieCount');
 
-
 Route::get('getLatestUsers', [\App\Http\Controllers\AdminController::class, 'getLatestUsers'])->name('getLatestUsers');
 Route::get('getLatestCinemas', [\App\Http\Controllers\AdminController::class, 'getLatestCinemas'])->name('getLatestCinemas');
 Route::get('getLatestCategories', [\App\Http\Controllers\AdminController::class, 'getLatestCategories'])->name('getLatestCategories');
 Route::get('getLatestMovie', [\App\Http\Controllers\AdminController::class, 'getLatestMovies'])->name('getLatestMovies');
-
 
 Route::get('users', [\App\Http\Controllers\AdminController::class, 'users']);
 Route::get('getAllUsers', [\App\Http\Controllers\AdminController::class, 'getAllUsers'])->name('getAllUsers');
@@ -63,7 +61,6 @@ Route::post('cinemaStore', [\App\Http\Controllers\CinemaController::class, 'cine
 Route::get('getAllCinemas', [\App\Http\Controllers\CinemaController::class, 'getAllCinemas'])->name('getAllCinemas');
 Route::delete('/cinemas/{cinema}', [\App\Http\Controllers\CinemaController::class, 'deleteCinema'])->name('deleteCinema');
 
-
 Route::get('categories', [\App\Http\Controllers\AdminController::class, 'categories'])->name('categories');
 Route::post('categoryStore', [\App\Http\Controllers\CategoryController::class, 'categoryStore'])->name('categoryStore');
 Route::get('getAllCategories', [\App\Http\Controllers\CategoryController::class, 'getAllCategories'])->name('getAllCategories');
@@ -71,7 +68,11 @@ Route::delete('/categories/{category}', [\App\Http\Controllers\CategoryControlle
 
 
 
+
+
 Route::get('addMovies', [\App\Http\Controllers\FilmmakerController::class, 'addMovie']);
 Route::get('formAddMovie', [\App\Http\Controllers\FilmmakerController::class, 'formAddMovie']);
 Route::get('/get-rooms', [\App\Http\Controllers\FilmmakerController::class, 'getRoomsByCinema'])->name('get-rooms');
+Route::post('movies/create', [\App\Http\Controllers\MovieController::class, 'createMovie'])->name('movies.create');
+Route::get('getMovies', [\App\Http\Controllers\MovieController::class, 'getMovies'])->name('getMovies');
 

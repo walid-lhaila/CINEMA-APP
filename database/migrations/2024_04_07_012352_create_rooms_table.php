@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('seats');
+            $table->date('reserved_at')->nullable();
             $table->unsignedBigInteger('cinema_id');
             $table->foreign('cinema_id')->references('id')->on('cinemas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

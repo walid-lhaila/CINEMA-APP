@@ -15,32 +15,32 @@
     <div class="flex justify-center items-center text-center py-5">
         <h1 class="text-black font-bold font-serif text-3xl">Add New Movie</h1>
     </div>
-    <form action="" method="post" class="p-4 md:p-5">
+    <form action="{{ route('movies.create') }}" method="post" enctype="multipart/form-data" class="p-4 md:p-5">
         @csrf
         <div class="grid gap-4 mb-4 grid-cols-4">
             <div class="col-span-2">
                 <label for="title" class="block mb-2 text-sm font-medium text-black">Title</label>
-                <input type="text" name="title" id="title" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Type Cinema name" required="">
+                <input type="text" name="title" id="title" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Type Cinema name" >
             </div>
             <div class="col-span-2">
                 <label for="description" class="block mb-2 text-sm font-medium text-black">Description</label>
-                <input type="text" name="description" id="description" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Adress" required="">
+                <input type="text" name="description" id="description" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Adress" >
             </div>
             <div class="col-span-2">
                 <label for="image" class="block mb-2 text-sm font-medium text-black">Image</label>
-                <input type="file" name="image" id="image" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 "required="">
+                <input type="file" name="image" id="image" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 ">
             </div>
             <div class="col-span-2">
                 <label for="trailer" class="block mb-2 text-sm font-medium text-black">Trailer</label>
-                <input type="url" name="trailer" id="trailer" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Enter Trailer URL" required="">
+                <input type="file" name="trailer" id="trailer" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="Enter Trailer URL" >
             </div>
             <div class="col-span-4">
                 <label for="date" class="block mb-2 text-sm font-medium text-black">Date</label>
-                <input type="date" name="date" id="date" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="date" required="">
+                <input type="date" name="date" id="date" class=" border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-400 block w-full p-3  dark:placeholder-gray-500 " placeholder="date" >
             </div>
             <div class="col-span-2">
                 <label for="cinema_id" class="block mb-2 text-sm font-medium text-black">Cinema</label>
-                <select name="cinema_id" id="cinema_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" required>
+                <select name="cinema_id" id="cinema_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" >
                     <!-- You can add options dynamically here -->
                     <option value="" disabled selected>Select Cinema</option>
                         @foreach($cinemas as $cinema)
@@ -50,14 +50,14 @@
             </div>
             <div class="col-span-2">
                 <label for="description" class="block mb-2 text-sm font-medium text-black">Room</label>
-                <select name="room_id" id="room_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" required>
+                <select name="room_id" id="room_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" >
                     <option value="" disabled selected>Select Room</option>
 
                 </select>
             </div>
             <div class="col-span-4">
                 <label for="date" class="block mb-2 text-sm font-medium text-black">Category</label>
-                <select name="category_id" id="category_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" required>
+                <select name="category_id" id="category_id" class="border border-gray-400  text-gray-900 text-sm rounded-lg focus:ring-gray-900 focus:border-gray-900 block w-full p-3 bg-white" >
                     <!-- You can add options dynamically here -->
                     <option value="" disabled selected>Select Category</option>
                     @foreach($categories as $category)

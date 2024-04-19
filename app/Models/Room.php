@@ -13,6 +13,7 @@ class Room extends Model
         [
             'name',
             'seats',
+            'reserved_at',
             'cinema_id',
         ];
 

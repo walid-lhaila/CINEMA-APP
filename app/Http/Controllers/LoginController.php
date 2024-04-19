@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\LoginService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -19,6 +20,7 @@ class LoginController extends Controller
 
         if ($loginResult['status'] === 'success') {
             $user = $loginResult['user'];
+            Auth::login($user);
 
             if ($user->filmmaker) {
                 return redirect('/addMovies')->with('success', 'Login successful!');

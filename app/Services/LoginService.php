@@ -17,6 +17,7 @@ class LoginService implements LoginServiceInterface
     {
         $user = $this->loginRepository->findUserByEmail($credentials['email']);
 
+
         if (!$user) {
             return ['status' => 'error', 'message' => 'User not found'];
         }
