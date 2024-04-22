@@ -27,10 +27,7 @@ class MovieController extends Controller
         return view('filmmaker.addMovies')->with('success', 'Movie added successfully.');
     }
 
-    public function getMovies(){
-        $movies = $this->movieService->getMovies();
-        return view('filmmaker.addMovies', compact('movies'))->with('success', 'Movies added successfully.');
-    }
+
 
 
 }

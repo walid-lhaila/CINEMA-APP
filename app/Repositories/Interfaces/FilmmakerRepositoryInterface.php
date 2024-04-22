@@ -8,4 +8,6 @@ interface FilmmakerRepositoryInterface {
     public function getAllCategories();
     public function getAllRooms();
     public function getRoomsByCinemaId($cinemaId);
+    public function getMovies();
+
 }

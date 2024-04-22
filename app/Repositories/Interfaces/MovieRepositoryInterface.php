@@ -5,5 +5,4 @@ interface MovieRepositoryInterface {
 
     public function movieCreate(array $data, int $filmmakerId);
 
-    public function getMovies();
 }

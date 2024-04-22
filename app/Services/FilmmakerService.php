@@ -28,6 +28,10 @@ class FilmmakerService implements FilmmakerServiceInterface
     {
         return $this->filmmakerRepository->getRoomsByCinemaId($cinemaId);
     }
+    public function getMovies()
+    {
+        return $this->filmmakerRepository->getMovies();
+    }
 
 }
 

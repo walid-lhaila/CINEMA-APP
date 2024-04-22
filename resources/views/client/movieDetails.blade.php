@@ -84,8 +84,8 @@
     <div class="w-[80%] mx-auto">
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-black font-bold font-mono text-3xl py-2">Wrong Turns Part 2</h1>
-                <p class="text-gray-500 text-md">Action / 180 Mins</p>
+                <h1 class="text-black font-bold font-mono text-3xl py-2">{{ $movie->title }}</h1>
+                <p class="text-gray-500 text-md">{{$movie->category->name}}/ 1 Day</p>
             </div>
             <div>
                 <button class="text-white bg-orange-500 font-medium text-md hover:bg-orange-400 px-10 py-2 ">
@@ -95,30 +95,30 @@
         </div>
         <div class="flex gap-10 items-center mt-5">
             <div class="">
-                <img class="h-[450px] w-[330px]" src="{{url('img/zombie10.jpg')}}" alt="">
+                <img class="h-[450px] w-[330px]" src="{{$movie->image}}" alt="">
             </div>
             <div class="">
-                <video id="myVideo" class="w-[850px] h-[450px]" controls autoplay muted>
-                    <source src="{{url('img/video.mp4')}}" type="video/mp4">
+                <video id="myVideo" class="w-[850px] h-[450px] object-cover" controls autoplay muted>
+                    <source src="{{$movie->trailer}}" type="video/mp4">
                 </video>
             </div>
         </div>
 
     <div class="w-[50%] flex justify-between items-center mt-10">
         <div>
-            <h1 class="text-black font-bold  text-md font-serif">Category: <span class="px-10 text-gray-600 text-sm">Crime</span></h1>
-            <h1 class="text-black font-bold  text-md font-serif py-3">Filmmaker: <span class="px-7 text-gray-600 text-sm">Walid Lhaila</span></h1>
-            <h1 class="text-black font-bold text-md font-serif">Cinéma: <span class="px-12 text-gray-600 text-sm">Chicago</span></h1>
+            <h1 class="text-black font-bold  text-md font-serif">Category: <span class="px-10 text-gray-600 text-sm">{{$movie->category->name}}</span></h1>
+            <h1 class="text-black font-bold  text-md font-serif py-3">Filmmaker: <span class="px-7 text-gray-600 text-sm">{{$movie->filmmaker->firstName}} {{$movie->filmmaker->lastName}}</span></h1>
+            <h1 class="text-black font-bold text-md font-serif">Cinéma: <span class="px-12 text-gray-600 text-sm">{{$movie->cinema->name}}</span></h1>
         </div>
         <div>
-            <h1 class="text-black font-bold  text-md font-serif">Date: <span class="px-8 text-gray-600 text-sm">24, October 2024</span></h1>
-            <h1 class="text-black font-bold text-md font-serif py-3">Time: <span class="px-7 text-gray-600 text-sm">180 Mins</span></h1>
+            <h1 class="text-black font-bold  text-md font-serif">Date: <span class="px-8 text-gray-600 text-sm">{{ \Carbon\Carbon::parse($movie->date)->format('d M Y') }}</span></h1>
+            <h1 class="text-black font-bold text-md font-serif py-3">Time: <span class="px-7 text-gray-600 text-sm">1 Day</span></h1>
             <h1 class="text-black font-bold text-md font-serif">Price: <span class="px-8 text-gray-600 text-sm">20 $</span></h1>
         </div>
     </div>
         <div class="w-full h-[2px] bg-gray-300 mt-10"></div>
             <h1 class="text-black font-bold text-2xl  italic py-6">Story Line</h1>
-                <p class="text-gray-500 text-sm">In a small town where everyone knows everyone, a peculiar incident starts a chain of events that leads to a child’s disappearance, which begins to tear at the fabric of an otherwise-peaceful community. Dark government agencies and seemingly malevolent supernatural forces converge on the town, while a few of the locals begin to understand that more is going on than meets the eye</p>
+                <p class="text-gray-500 text-sm">{{$movie->description}}</p>
 
         <h1 class="text-black font-bold text-2xl  italic py-8">More Movies Like This</h1>
 

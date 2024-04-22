@@ -48,10 +48,7 @@
 </style>
 
 
-<div id="spinner">
-    <div class="spinner-border-gray" role="status"></div>
-    <div class="spinner-border-orange" role="status"></div>
-</div>
+
 
 
 
@@ -81,121 +78,7 @@
 <div class="border-dashed border-4 border-black mt-5 "></div>
 
 <div class="w-[80%] mt-44 mx-auto">
-        <div class=" w-[80%] mx-auto flex flex-wrap gap-10">
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/zombie1.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/zombie2.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/crime1.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/crime2.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/zombie3.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/crime3.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/zombie9.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
-                <img src="{{url('img/crime4.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full ml-[-16px]">
-                            <div class="flex justify-end">
-                                <button class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Get Ticket</button>
-                            </div>
-                            <h1 class="bg-white w-full text-black py-1 text-center">The Witcher</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="movie-container" class=" w-[80%] mx-auto flex flex-wrap gap-10">
 
 
         </div>
@@ -204,6 +87,56 @@
 
 
 @extends('footer')
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Function to load movies
+        function loadMovies() {
+            $.ajax({
+                url: "{{ route('getAllMovies') }}",
+                type: "GET",
+                dataType: "json",
+                success: function (response) {
+                    if (response.length > 0) {
+                        var movieContainer = $('#movie-container');
+                        movieContainer.empty();
+                        $.each(response, function (index, movie) {
+                            var movieCard = `
+                                <div class="relative cursor-pointer bg-cover bg-center w-[260px] h-[350px] group overflow-hidden">
+                                    <img src="${movie.image}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
+                                    <div class="absolute inset-0 rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t -bottom-2 pt-30 text-white flex items-end">
+                                        <div class="transform-gpu p-4 w-[230px] space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-500 ease-in-out">
+                                            <div class="w-full ml-[-16px]">
+                                                <div class="flex justify-end">
+                                                    <button onclick="gotoDetailsPage(${movie.id})" class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Détails</button>
+                                                </div>
+                                                <h1 class="bg-white w-full text-black py-1 text-center">${movie.title}</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            movieContainer.append(movieCard);
+                        });
+                    } else {
+                        $('#movie-container').html("<h2>No movies found</h2>");
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        }
+
+        // Initial load
+        loadMovies();
+
+        // Load movies every 10 seconds
+        setInterval(loadMovies, 10000);
+    });
+    function gotoDetailsPage(movieId) {
+        window.location.href = "{{ url('movieDetails') }}?id=" + movieId;
+    }
+</script>
 
 
 

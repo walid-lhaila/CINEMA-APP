@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Services\ClientService;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    protected $clientServices;
+    public function __construct(ClientService $clientServices){
+        $this->clientServices = $clientServices;
+    }
 
     public function home()
     {
@@ -17,11 +22,18 @@ class ClientController extends Controller
     {
         return view('client.allMovie');
     }
-
-
-    public function movieDetails()
+    public function getAllMovies()
     {
-        return view('client.movieDetails');
+        $movies = $this->clientServices->getAllMovies();
+        return response()->json($movies);
+    }
+
+
+    public function movieDetails(Request $request)
+    {
+        $movieId = $request->input('id');
+        $movie = $this->clientServices->getMovieDetails($movieId);
+        return view('client.movieDetails', compact('movie'));
     }
 
 

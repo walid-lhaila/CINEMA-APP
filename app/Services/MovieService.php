@@ -16,9 +16,7 @@ class MovieService implements MovieServiceInterface
         return $this->movieRepository->movieCreate($data, $filmmakerId);
     }
 
-    public function getMovies(){
-        return $this->movieRepository->getMovies();
-    }
+
 }
 
 

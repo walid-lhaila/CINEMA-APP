@@ -57,10 +57,7 @@ class MovieRepository implements MovieRepositoryInterface
             return $movie;
         }
 
-        public function getMovies()
-        {
-            $Movies = Movie::with('cinema', 'category')->get();
-        }
+
 }
 
 

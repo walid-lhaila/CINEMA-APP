@@ -26,6 +26,7 @@ Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->n
 
 
 Route::get('allMovie', [\App\Http\Controllers\ClientController::class, 'allMovie']);
+Route::get('getAllMovies', [\App\Http\Controllers\ClientController::class, 'getAllMovies'])->name('getAllMovies');
 Route::get('movieDetails', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
 Route::get('moviesOfCategory', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory']);
 Route::get('ticket', [\App\Http\Controllers\ClientController::class, 'ticket']);
@@ -74,5 +75,4 @@ Route::get('addMovies', [\App\Http\Controllers\FilmmakerController::class, 'addM
 Route::get('formAddMovie', [\App\Http\Controllers\FilmmakerController::class, 'formAddMovie']);
 Route::get('/get-rooms', [\App\Http\Controllers\FilmmakerController::class, 'getRoomsByCinema'])->name('get-rooms');
 Route::post('movies/create', [\App\Http\Controllers\MovieController::class, 'createMovie'])->name('movies.create');
-Route::get('getMovies', [\App\Http\Controllers\MovieController::class, 'getMovies'])->name('getMovies');
 

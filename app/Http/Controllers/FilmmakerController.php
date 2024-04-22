@@ -15,7 +15,8 @@ class FilmmakerController extends Controller
     }
     public function addMovie()
     {
-        return view('filmmaker.addMovies');
+        $movies = $this->filmmakerService->getMovies();
+        return view('filmmaker.addMovies', compact('movies'));
     }
 
     public function formAddMovie() {
