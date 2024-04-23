@@ -18,6 +18,15 @@ class ClientService implements ClientServiceInterface
     public function getMovieDetails($movieId){
         return $this->clientRepository->getMovieDetails($movieId);
     }
+
+    public function getReservations()
+    {
+         return $this->clientRepository->getReservations();
+    }
+    public function getCategories()
+    {
+        return $this->clientRepository->getCategories();
+    }
 }
 
 

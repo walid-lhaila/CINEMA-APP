@@ -3,6 +3,7 @@
     namespace App\Providers;
 
     use App\Http\Controllers\RoomController;
+    use App\Http\Middleware\CheckRole;
     use App\Repositories\AdminRepository;
     use App\Repositories\CategoryRepository;
     use App\Repositories\CinemaRepository;
@@ -10,6 +11,7 @@
     use App\Repositories\LoginRepository;
     use App\Repositories\MovieRepository;
     use App\Repositories\RegisterRepository;
+    use App\Repositories\ReservationRepository;
     use App\Repositories\RoomRepository;
     use App\Services\AdminService;
     use App\Services\CategoryService;
@@ -18,6 +20,7 @@
     use App\Services\LoginService;
     use App\Services\MovieService;
     use App\Services\RegisterService;
+    use App\Services\ReservationService;
     use App\Services\RoomService;
     use Illuminate\Support\ServiceProvider;
 
@@ -103,11 +106,29 @@
             );
         }
 
+        public function reservation(): void
+        {
+            $this->app->bind(
+                ReservationService::class,
+                function ($app) {
+                    return new ReservationService(new ReservationRepository());
+                }
+            );
+        }
+
         /**
          * Bootstrap any application services.
          */
         public function boot(): void
         {
             $this->admin();
+            $this->registerMiddleware();
+        }
+
+        private function registerMiddleware()
+        {
+            $router = $this->app['router'];
+
+            $router->aliasMiddleware('role', CheckRole::class);
         }
     }

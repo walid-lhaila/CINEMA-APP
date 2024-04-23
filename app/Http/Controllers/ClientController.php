@@ -15,7 +15,8 @@ class ClientController extends Controller
 
     public function home()
     {
-        return view('client.home');
+        $categories = $this->clientServices->getCategories();
+        return view('client.home', compact('categories'));
     }
 
     public function allMovie()
@@ -43,10 +44,12 @@ class ClientController extends Controller
     }
 
 
-    public function ticket(Request $request)
+    public function ticket()
     {
-        return view('client.ticket');
+        $reservations = $this->clientServices->getReservations();
+        return view('client.ticket', compact('reservations'));
     }
+
 
 
 

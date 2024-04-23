@@ -57,12 +57,12 @@
 
 <div class="flex justify-between h-[70px] w-full z-10 items-center bg-black px-10">
     <div class="z-10">
-        <img class="w-[145px] h-[100px]" src="{{url('img/logoW.png')}}" alt="">
+        <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
     <nav class="ml-[-70px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="allMovie">MOVIES</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="ticket">TICKETS</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="ticket">RESERVATION</a>
     </nav>
     <div class="z-10">
         <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -85,12 +85,15 @@
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-black font-bold font-mono text-3xl py-2">{{ $movie->title }}</h1>
-                <p class="text-gray-500 text-md">{{$movie->category->name}}/ 1 Day</p>
+                <p class="text-gray-500 text-md">{{$movie->category->name}} / 1 Day</p>
             </div>
             <div>
-                <button class="text-white bg-orange-500 font-medium text-md hover:bg-orange-400 px-10 py-2 ">
-                    Get Ticket
-                </button>
+                <form action="{{ route('addReservation', $movie->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="text-white bg-orange-500 font-medium text-md hover:bg-orange-400 px-10 py-2">
+                        Get Ticket
+                    </button>
+                </form>
             </div>
         </div>
         <div class="flex gap-10 items-center mt-5">
@@ -107,13 +110,13 @@
     <div class="w-[50%] flex justify-between items-center mt-10">
         <div>
             <h1 class="text-black font-bold  text-md font-serif">Category: <span class="px-10 text-gray-600 text-sm">{{$movie->category->name}}</span></h1>
-            <h1 class="text-black font-bold  text-md font-serif py-3">Filmmaker: <span class="px-7 text-gray-600 text-sm">{{$movie->filmmaker->firstName}} {{$movie->filmmaker->lastName}}</span></h1>
+            <h1 class="text-black font-bold  text-md font-serif py-3">Filmmaker: <span class="px-7 text-gray-600 text-sm">Lhaila <Walid></Walid></span></h1>
             <h1 class="text-black font-bold text-md font-serif">Cinéma: <span class="px-12 text-gray-600 text-sm">{{$movie->cinema->name}}</span></h1>
         </div>
         <div>
             <h1 class="text-black font-bold  text-md font-serif">Date: <span class="px-8 text-gray-600 text-sm">{{ \Carbon\Carbon::parse($movie->date)->format('d M Y') }}</span></h1>
             <h1 class="text-black font-bold text-md font-serif py-3">Time: <span class="px-7 text-gray-600 text-sm">1 Day</span></h1>
-            <h1 class="text-black font-bold text-md font-serif">Price: <span class="px-8 text-gray-600 text-sm">20 $</span></h1>
+            <h1 class="text-black font-bold text-md font-serif">Seats: <span class="px-8 text-gray-600 text-sm">{{$movie->room->seats}}</span></h1>
         </div>
     </div>
         <div class="w-full h-[2px] bg-gray-300 mt-10"></div>

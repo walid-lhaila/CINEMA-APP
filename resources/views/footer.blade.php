@@ -2,7 +2,7 @@
     <div class="w-[60%] mx-auto">
         <div class="flex justify-between items-center">
             <div>
-                <img class="w-[140px] h-[100px]" src="{{url('img/logoW.png')}}" alt="">
+                <img class="w-[140px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
             </div>
             <div class="flex gap-3 px-10">
                 <div>

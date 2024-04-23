@@ -44,6 +44,16 @@
         }
     }
 
+    <style>
+     .hide-scroll-bar {
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+     }
+    .hide-scroll-bar::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
 </style>
 
 
@@ -104,7 +114,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                           </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Slide-end -->
                     <!-- Slide-start -->
@@ -199,15 +210,32 @@
 <div class="flex justify-between items-center mt-24">
     <div class="border-dotted border-8 border-gray-200 w-[40%]"></div>
     <div class="px-3 text-center">
-        <h1 class="text-4xl text-black font-bold font-serif ">Top movies in <span class="text-orange-500">theatres</span></h1>
+        <h1 class="text-4xl text-black font-bold font-serif ">Top  <span class="text-orange-500">Categories</span></h1>
         <p class="text-gray-700 text-sm ">at Moviak Cinema & Theatre</p>
     </div>
     <div class="border-dotted border-8 border-gray-200 w-[40%]"></div>
 </div>
 
 
+<div class="flex flex-col bg-white m-auto p-auton mt-20">
 
-    <div class="flex mt-44">
+    <div
+        class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+        <div
+            class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
+            @foreach($categories as $category)
+            <div class="inline-block px-3">
+                <div
+                    class="w-44 h-40 flex justify-center items-center text-center text-2xl text-white font-serif font-medium bg-gradient-to-bl from-red-600 via-red-500 to-red-300 bg-opacity-50 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">{{$category->name}}</div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="flex mt-20">
         <div class="relative bg-cover bg-center h-[500px] w-[50%]" style="background-image: url('img/image11.jpg');">
             <div class="flex justify-start mt-[-209px] -ml-28">
                 <img class="w-[700px] h-[700px]" src="{{url('img/promotion.png')}}" alt="">

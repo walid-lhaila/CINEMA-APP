@@ -54,12 +54,12 @@
 
 <div class="flex justify-between h-[70px] w-full z-10 items-center bg-black px-10">
     <div class="z-10">
-        <img class="w-[145px] h-[100px]" src="{{url('img/logoW.png')}}" alt="">
+        <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
     <nav class="ml-[-70px] z-10 text-white font-medium flex justify-center items-center text-sm  gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1" href="home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="allMovie">MOVIES</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1" href="ticket">TICKETS</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1" href="ticket">RESERVATION</a>
     </nav>
     <div class="z-10">
         <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
