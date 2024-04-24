@@ -1,0 +1,12 @@
+<?php
+namespace App\Repositories;
+
+class {{RepositoryClass}}
+{
+     public function create(array $data)
+        {
+
+        }
+}
+
+
