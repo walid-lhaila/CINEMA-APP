@@ -24,7 +24,9 @@ class MovieController extends Controller
         $data = $request->only(['title', 'description', 'date', 'cinema_id', 'room_id', 'category_id', 'image', 'trailer']);
         $filmmakerId = $user->filmmaker->id;
         $movie = $this->movieService->movieCreate($data, $filmmakerId);
-        return view('filmmaker.addMovies')->with('success', 'Movie added successfully.');
+        session()->flash('success', 'Movie added successfully.');
+        return redirect('/addMovies');
+
     }
 
 

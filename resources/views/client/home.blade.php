@@ -66,15 +66,19 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[-70px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="home">HOME</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="allMovie">MOVIES</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="ticket">TICKETS</a>
+    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="/home">HOME</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/ticket">TICKETS</a>
     </nav>
-    <div class="z-10">
-        <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-        </svg>
+    <div class="flex gap-6 text-center items-center">
+        <div class="z-10 flex text-center items-center gap-2">
+            <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            </svg>
+            <h1 class="text-white text-center font-bold font-serif mt-1">{{$user->firstName}} {{$user->lastName}}</h1>
+        </div>
+        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-orange-500 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
 <div class="relative bg-cover bg-center h-[600px] " style="background-image: url('img/image4.jpg');">
@@ -217,7 +221,7 @@
 </div>
 
 
-<div class="flex flex-col bg-white m-auto p-auton mt-20">
+<div class="flex flex-col bg-white m-auto p-auton mt-20 w-[70%]">
 
     <div
         class="flex overflow-x-scroll pb-10 hide-scroll-bar">
@@ -225,8 +229,12 @@
             class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
             @foreach($categories as $category)
             <div class="inline-block px-3">
+                <a href="{{ route('moviesOfCategory', ['category' => $category->id]) }}">
                 <div
-                    class="w-44 h-40 flex justify-center items-center text-center text-2xl text-white font-serif font-medium bg-gradient-to-bl from-red-600 via-red-500 to-red-300 bg-opacity-50 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">{{$category->name}}</div>
+                    class="w-44 h-40 flex justify-center items-center text-center text-2xl text-white font-serif font-medium bg-gradient-to-bl from-red-600 via-red-500 to-red-300 bg-opacity-50 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-2xl cursor-pointer transition-shadow duration-500 ease-in-out">
+                        {{$category->name}}
+                </div>
+                </a>
             </div>
             @endforeach
         </div>

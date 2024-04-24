@@ -58,15 +58,19 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[-70px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="home">HOME</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="allMovie">MOVIES</a>
-        <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="ticket">RESERVATION</a>
+    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/home">HOME</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
+        <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="/ticket">TICKETS</a>
     </nav>
-    <div class="z-10">
-        <svg class="w-9 h-9 text-white cursor-pointer hover:text-orange-400  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-        </svg>
+    <div class="flex gap-6 text-center items-center">
+        <div class="z-10 flex text-center items-center gap-2">
+            <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            </svg>
+            <h1 class="text-white text-center font-bold font-serif mt-1">{{$user->firstName}} {{$user->lastName}}</h1>
+        </div>
+        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-orange-500 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
 <div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image1.jpg');">
@@ -116,7 +120,7 @@
                     <div class="w-[20px] h-[30px] rounded-tl-xl rounded-bl-xl bg-white"></div> <!-- Right semicircle -->
                 </div>
                 <div class="py-5 flex justify-center items-center">
-                        <button class="bg-orange-500 text-white px-4 py-1 font-medium text-sm font-mono hover:mt-1 duration-500 ">Download</button>
+                        <button class="bg-orange-500 text-white px-4 py-1 font-medium text-sm font-mono hover:translate-y-1 duration-700 ">Download</button>
                 </div>
                 <div class="flex justify-between items-center mt-5">
                     <div class="bg-white w-[30px] h-[30px] rounded-md"></div>

@@ -24,6 +24,13 @@ class ClientRepository implements ClientRepositoryInterface
     {
         return Category::all();
     }
+
+    public function getMovieOfCategory($categoryId)
+    {
+        return Movie::where('category_id', $categoryId)->get();
+    }
+
+
 }
 
 

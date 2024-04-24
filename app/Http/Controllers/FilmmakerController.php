@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\FilmmakerService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FilmmakerController extends Controller
 {
@@ -15,15 +16,17 @@ class FilmmakerController extends Controller
     }
     public function addMovie()
     {
+        $user = Auth::user();
         $movies = $this->filmmakerService->getMovies();
-        return view('filmmaker.addMovies', compact('movies'));
+        return view('filmmaker.addMovies', compact('movies', 'user'));
     }
 
     public function formAddMovie() {
+        $user = Auth::user();
         $cinemas = $this->filmmakerService->getAllCinemas();
         $rooms = $this->filmmakerService->getAllRooms();
         $categories = $this->filmmakerService->getAllCategories();
-        return view('filmmaker.formAddMovie', compact('cinemas', 'rooms', 'categories'));
+        return view('filmmaker.formAddMovie', compact('cinemas', 'rooms', 'categories', 'user'));
     }
     public function getRoomsByCinema(Request $request)
     {

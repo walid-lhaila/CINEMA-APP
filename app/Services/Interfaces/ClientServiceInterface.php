@@ -7,5 +7,6 @@ interface ClientServiceInterface{
     public function getMovieDetails($movieId);
     public function getReservations();
     public function getCategories();
+    public function getMovieOfCategory($categoryId);
 
 }

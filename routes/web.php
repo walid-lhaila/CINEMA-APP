@@ -26,11 +26,12 @@ Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->n
 Route::middleware(['role:client'])->group(function () {
     Route::get('allMovie', [\App\Http\Controllers\ClientController::class, 'allMovie']);
     Route::get('getAllMovies', [\App\Http\Controllers\ClientController::class, 'getAllMovies'])->name('getAllMovies');
-    Route::get('movieDetails', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
+    Route::get('movieDetails/{id}', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
     Route::post('/reservation/{movie}', [\App\Http\Controllers\ReservationController::class, 'storeReservation'])->name('addReservation');
-    Route::get('moviesOfCategory', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory']);
+    Route::get('moviesOfCategory/{category}', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory'])->name('moviesOfCategory');
     Route::get('ticket', [\App\Http\Controllers\ClientController::class, 'ticket']);
     Route::get('home', [\App\Http\Controllers\ClientController::class, 'home']);
+    Route::get('/test-pdf', [\App\Http\Controllers\PdfController::class,'printPdf']);
 });
 
 
