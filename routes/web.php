@@ -18,6 +18,10 @@ Route::get('spinner', function(){
     return view('spinner');
 });
 
+Route::get('/notLogged', function () {
+    return view('notLogged');
+})->name('notLogged');
+
 Route::post('/filmmakers/register', [\App\Http\Controllers\RegisterController::class, 'filmmakerStore'])->name('filmmakers.store');
 Route::post('/clients/register', [\App\Http\Controllers\RegisterController::class, 'clientStore'])->name('clients.store');
 Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login.submit');
@@ -27,6 +31,7 @@ Route::middleware(['role:client'])->group(function () {
     Route::get('allMovie', [\App\Http\Controllers\ClientController::class, 'allMovie']);
     Route::get('getAllMovies', [\App\Http\Controllers\ClientController::class, 'getAllMovies'])->name('getAllMovies');
     Route::get('movieDetails/{id}', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
+    Route::get('moviesOfCategory/{categoryId}', [\App\Http\Controllers\ClientController::class, 'getMovieOfCategory'])->name('getMovieOfCategory');
     Route::post('/reservation/{movie}', [\App\Http\Controllers\ReservationController::class, 'storeReservation'])->name('addReservation');
     Route::get('moviesOfCategory/{category}', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory'])->name('moviesOfCategory');
     Route::get('ticket', [\App\Http\Controllers\ClientController::class, 'ticket']);

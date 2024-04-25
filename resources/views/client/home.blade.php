@@ -78,7 +78,7 @@
             </svg>
             <h1 class="text-white text-center font-bold font-serif mt-1">{{$user->firstName}} {{$user->lastName}}</h1>
         </div>
-        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-orange-500 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
+        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-red-600 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
 <div class="relative bg-cover bg-center h-[600px] " style="background-image: url('img/image4.jpg');">
@@ -106,86 +106,24 @@
             <div class="swiper tranding-slider">
                 <div class="swiper-wrapper">
                     <!-- Slide-start -->
+                    @foreach($latestMovies as $latestMovie)
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
                             <div class="relative bg-center w-[220px] h-[300px]  duration-500 group overflow-hidden">
-                                <img src="{{url('img/zombie10.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
+                                <img src="{{$latestMovie->image}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
                                 <div class="absolute inset-0  z-50 opacity-100 from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
                                     <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
                                         <div class="w-full px-3">
-                                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
+                                            <p class="text-gray-300 text-xs ">{{$latestMovie->category->name}} / 180 Mins</p>
+                                            <h1 class="text-white font-bold text-sm font-mono py-2">{{$latestMovie->title}}</h1>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Slide-end -->
-                    <!-- Slide-start -->
-                    <div class="swiper-slide tranding-slide">
-                        <div class="tranding-slide-img">
-                            <div class="relative bg-center w-[220px] h-[300px]  duration-500 group overflow-hidden">
-                                <img src="{{url('img/zombie2.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
-                                <div class="absolute inset-0  z-50 opacity-100 from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                                        <div class="w-full px-3">
-                                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                           </div>
-                    </div>
-                    <!-- Slide-end -->
-                    <!-- Slide-start -->
-                    <div class="swiper-slide tranding-slide">
-                        <div class="tranding-slide-img">
-                            <div class="relative bg-center w-[220px] h-[300px]  duration-500 group overflow-hidden">
-                                <img src="{{url('img/crime3.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
-                                <div class="absolute inset-0  z-50 opacity-100 from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                                        <div class="w-full px-3">
-                                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                           </div>
-                    </div>
-                    <!-- Slide-end -->
-                    <!-- Slide-start -->
-                    <div class="swiper-slide tranding-slide">
-                        <div class="tranding-slide-img">
-                            <div class="relative bg-center w-[220px] h-[300px]  duration-500 group overflow-hidden">
-                                <img src="{{url('img/zombie7.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
-                                <div class="absolute inset-0  z-50 opacity-100 from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                                        <div class="w-full px-3">
-                                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                           </div>
-                    </div>
-                    <!-- Slide-end -->
-                    <!-- Slide-start -->
-                    <div class="swiper-slide tranding-slide">
-                        <div class="tranding-slide-img">
-                            <div class="relative bg-center w-[220px] h-[300px]  duration-500 group overflow-hidden">
-                                <img src="{{url('img/sport2.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover ">
-                                <div class="absolute inset-0  z-50 opacity-100 from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                                        <div class="w-full px-3">
-                                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                     <!-- Slide-end -->
                 </div>
 

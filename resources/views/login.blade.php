@@ -8,9 +8,36 @@
             <img class="w-[260px] h-[240px] " src="{{url('img/logo.png')}}" alt="">
         </div>
 
-        <p class="text-xl text-center text-gray-600 dark:text-gray-500">
-            Welcome back!
-        </p>
+        @if(session('error'))
+            <div id="errorMessage" class="flex justify-center">
+            <div class="flex w-full max-w-sm overflow-hidden bg-red-100 rounded-lg shadow-md ">
+                <div class="flex items-center justify-center w-12 bg-red-500">
+                    <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+                    </svg>
+                </div>
+                <div class="px-4 py-2 -mx-3">
+                    <div class="mx-3">
+                        <span class="font-semibold text-red-500 dark:text-red-500">Error!</span>
+                        <p class="text-sm text-gray-700 font-bold font-serif">
+                            {{session('error')}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <script>
+                setTimeout(function() {
+                    var errorMessage = document.getElementById('errorMessage');
+                    if(errorMessage) {
+                        errorMessage.classList.add('scale-0');
+                        setTimeout(function() {
+                            errorMessage.remove();
+                        }, 500); // Delay for the transition to complete
+                    }
+                }, 2000);
+            </script>
+        @endif
 
         <a href="/auth/google/redirect" class="flex items-center justify-center mt-4 text-gray-600 bg-orange-500 transition-colors duration-300 transform border rounded-lg dark:border-orange-500 dark:text-gray-100 dark:hover:bg-orange-600 hover:text-white">
             <div class="px-4 py-2">

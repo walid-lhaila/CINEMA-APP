@@ -20,6 +20,6 @@ class ReservationController extends Controller
     {
         $userId = auth()->user()->client->id;
         $this->reservationService->addReservation($userId, $movieId);
-        return redirect()->back()->with('success', 'Reservation created successfully!');
+        return redirect()->back()->with('success', 'Ticket reserved successfully!');
     }
 }

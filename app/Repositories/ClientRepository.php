@@ -15,6 +15,11 @@ class ClientRepository implements ClientRepositoryInterface
         return Movie::with('cinema', 'room', 'category', 'filmmaker')->find($movieId);
     }
 
+    public function getMoviesOfCategory($categoryId)
+    {
+        return Movie::where('category_id', $categoryId)->limit(4)->get();
+    }
+
     public function getReservations()
     {
         return Reservation::with('movie')->get();
@@ -28,6 +33,10 @@ class ClientRepository implements ClientRepositoryInterface
     public function getMovieOfCategory($categoryId)
     {
         return Movie::where('category_id', $categoryId)->get();
+    }
+    public function getLatestMovies()
+    {
+        return Movie::latest()->take(5)->get();
     }
 
 

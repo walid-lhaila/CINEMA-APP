@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Models\Movie;
 use App\Repositories\ClientRepository;
 use App\Services\Interfaces\ClientServiceInterface;
 
@@ -18,6 +19,10 @@ class ClientService implements ClientServiceInterface
     public function getMovieDetails($movieId){
         return $this->clientRepository->getMovieDetails($movieId);
     }
+    public function getMoviesOfCategory($categoryId)
+    {
+        return Movie::where('category_id', $categoryId)->limit(4)->get();
+    }
 
     public function getReservations()
     {
@@ -32,6 +37,10 @@ class ClientService implements ClientServiceInterface
         return $this->clientRepository->getMovieOfCategory($categoryId);
     }
 
+    public function getLatestMovies()
+    {
+        return $this->clientRepository->getLatestMovies();
+    }
 }
 
 

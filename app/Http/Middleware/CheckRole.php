@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -17,6 +18,9 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, $role)
     {
+        if (!Auth::check()) {
+            return redirect()->route('notLogged')->with('error', 'You must be logged in to access this page.');
+        }
         if ($role == 'admin' && $request->user()->admin !== null) {
             return $next($request);
         } elseif ($role == 'filmmaker' && $request->user()->filmmaker !== null) {

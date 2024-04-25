@@ -8,5 +8,8 @@ interface ClientServiceInterface{
     public function getReservations();
     public function getCategories();
     public function getMovieOfCategory($categoryId);
+    public function getLatestMovies();
+    public function getMoviesOfCategory($categoryId);
+
 
 }

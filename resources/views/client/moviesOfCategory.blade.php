@@ -70,10 +70,10 @@
             </svg>
             <h1 class="text-white text-center font-bold font-serif mt-1">{{$user->firstName}} {{$user->lastName}}</h1>
         </div>
-        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-orange-500 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
+        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-red-600 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
-<div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image.jpg');">
+<div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image3.jpg');">
     <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center bg-black z-50 duration-300">
         <div class="flex justify-center items-center">
             <h1 class="text-white  text-5xl font-medium underline">{{$category->name}}</h1>

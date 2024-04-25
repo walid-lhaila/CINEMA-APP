@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\Movie;
 use App\Services\ClientService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,9 @@ class ClientController extends Controller
     public function home()
     {
         $user = Auth::user();
+        $latestMovies = $this->clientServices->getLatestMovies();
         $categories = $this->clientServices->getCategories();
-        return view('client.home', compact('categories', 'user'));
+        return view('client.home', compact('categories', 'user', 'latestMovies'));
     }
 
     public function allMovie()
@@ -39,7 +41,13 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         $movie = $this->clientServices->getMovieDetails($movieId);
-        return view('client.movieDetails', compact('movie', 'user'));
+        $movies = $this->clientServices->getMoviesOfCategory($movie->category_id);
+        return view('client.movieDetails', compact('movie', 'user', 'movies'));
+    }
+
+    public function getMovieOfCategory($categoryId)
+    {
+        return Movie::where('category_id', $categoryId)->limit(4)->get();
     }
 
     public function moviesOfCategory($categoryId)

@@ -71,13 +71,29 @@
             </svg>
             <h1 class="text-white text-center font-bold font-serif mt-1">{{$user->firstName}} {{$user->lastName}}</h1>
         </div>
-        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-orange-500 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
+        <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-red-600 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
-<div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image3.jpg');">
-    <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex justify-center items-center bg-black z-50 duration-300">
-        <div class="flex justify-center items-center">
-            <h1 class="text-white  text-5xl font-medium underline">Movie Détail</h1>
+<div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image1.jpg');">
+    <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex flex-col justify-center items-center bg-black z-50 duration-300">
+        @if(session('success'))
+            <div id="successMessage"  class="flex w-full max-w-sm overflow-hidden bg-green-100  rounded-lg shadow-md ">
+                <div class="flex items-center justify-center w-12 bg-emerald-500">
+                    <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+                    </svg>
+                </div>
+
+                <div class="px-4 py-2 -mx-3">
+                    <div class="mx-3">
+                        <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success!</span>
+                        <p class="text-sm text-gray-800 ">{{ session('success') }}</p>
+                    </div>
+                </div>
+            </div>
+        @endif
+        <div class="flex justify-center items-center py-28">
+            <h1 class="text-white  text-5xl font-medium underline">Movie Détails</h1>
         </div>
     </div>
 </div>
@@ -130,58 +146,23 @@
         <h1 class="text-black font-bold text-2xl  italic py-8">More Movies Like This</h1>
 
         <div class="flex flex-wrap gap-10 mt-10">
-
+            @foreach($movies as $movie)
             <div class="relative cursor-pointer bg-cover bg-center w-[274px] h-[360px] border-4 border-white hover:border-orange-500 duration-500 group overflow-hidden">
-                <img src="{{url('img/zombie1.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
+                <img src="{{$movie->image}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
                 <div class="absolute inset-0 rounded-xl z-50 opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
                     <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
                         <div class="w-full px-3">
-                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
+                            <p class="text-gray-300 text-xs ">{{$movie->category->name}}/ 180 Mins</p>
+                            <h1 class="text-white font-bold text-sm font-mono py-2">{{$movie->title}}</h1>
                             <button class="bg-white px-4 py-1 text-sm text-black hover:text-white hover:bg-orange-500 duration-500">Détails</button>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <div class="relative cursor-pointer bg-cover bg-center w-[274px] h-[360px] border-4 border-white hover:border-orange-500 duration-500 group overflow-hidden">
-                <img src="{{url('img/zombie9.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full px-3">
-                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                            <button class="bg-white px-4 py-1 text-sm text-black hover:text-white hover:bg-orange-500 duration-500">Détails</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="relative cursor-pointer bg-cover bg-center w-[274px] h-[360px] border-4 border-white hover:border-orange-500 duration-500 group overflow-hidden">
-                <img src="{{url('img/zombie3.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full px-3">
-                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                            <button class="bg-white px-4 py-1 text-sm text-black hover:text-white hover:bg-orange-500 duration-500">Détails</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="relative cursor-pointer bg-cover bg-center w-[274px] h-[360px] border-4 border-white hover:border-orange-500 duration-500 group overflow-hidden">
-                <img src="{{url('img/zombie7.jpg')}}" alt="Image" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform scale-100 group-hover:scale-110">
-                <div class="absolute inset-0 rounded-xl z-50 opacity-100 transition duration-500 ease-in-out cursor-pointer from-black/80 to-transparent bg-gradient-to-t pt-30 text-white flex items-end">
-                    <div class="transform-gpu p-4 w-[260px] space-y-3 text-xl pb-10 transform transition duration-500 ease-in-out">
-                        <div class="w-full px-3">
-                            <p class="text-gray-300 text-xs ">Thriller / 180 Mins</p>
-                            <h1 class="text-white font-bold text-sm font-mono py-2">The Scariest Dream</h1>
-                            <button class="bg-white px-4 py-1 text-sm text-black hover:text-white hover:bg-orange-500 duration-500">Détails</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
     </div>
 
@@ -205,5 +186,17 @@
         // Call the replayVideo function when the video ends
         replayVideo();
     });
+</script>
+
+<script>
+    setTimeout(function() {
+        var successMessage = document.getElementById('successMessage');
+        if(successMessage) {
+            successMessage.classList.add('scale-0');
+            setTimeout(function() {
+                successMessage.remove();
+            }, 500);
+        }
+    }, 2000);
 </script>
 

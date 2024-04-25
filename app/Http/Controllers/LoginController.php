@@ -32,7 +32,7 @@ class LoginController extends Controller
                 return redirect('/login')->with('error', 'Unrecognized user role!');
             }
         } else {
-            return redirect('/login')->with('error', $loginResult['message']);
+            return redirect('/login')->with('error', $loginResult['message'])->withInput();
         }
     }
 }
