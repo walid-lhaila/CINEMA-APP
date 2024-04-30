@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->hasOne(Filmmaker::class);
     }
 
+    public function isAdmin()
+    {
+        return $this->admin()->exists();
+    }
+
     /**
      * The attributes that are mass assignable.
      *

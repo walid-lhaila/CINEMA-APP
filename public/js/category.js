@@ -2,6 +2,11 @@
 
     $(document).ready(function () {
 
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('en-GB', options);
+        }
         function fetchCategories() {
             $('#category-container').empty();
         $.ajax({
@@ -14,7 +19,7 @@
                         <div class="w-[32%] h-[150px] bg-gradient-to-t from-zinc-900">
                             <div class="p-5 flex justify-between items-center">
                                 <div>
-                                    <h1 class="text-gray-300 text-md">${category.created_at}</h1>
+                                    <h1 class="text-gray-300 text-md">${formatDate(category.created_at)}</h1>
                                     <h1 class="text-3xl font-medium font-serif text-white py-2">${category.name}</h1>
                                     <div class="flex gap-2  items-center text-center mt-3">
 
@@ -60,6 +65,10 @@
                     $('#form').removeClass('scale-100').addClass('scale-0');
                     $('#categoryForm')[0].reset();
                     fetchCategories();
+                    $('.alert-success').removeClass('hidden').text('Category created successfully!');
+                    setTimeout(function(){
+                        $('.alert-success').addClass('hidden').text('');
+                    }, 3000);
                 },
                 error: function (xhr, status, error) {
                     console.log(xhr.responseText);

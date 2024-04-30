@@ -104,3 +104,13 @@
             });
     });
 </script>
+<script>
+    // Get the current local date
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1).toString().padStart(2, '0');
+    var day = now.getDate().toString().padStart(2, '0');
+
+    // Set the minimum date attribute of the input field
+    document.getElementById('date').setAttribute('min', year + '-' + month + '-' + day);
+</script>

@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return date.toLocaleDateString('en-GB', options);
+    }
     function fetchUsers() {
         $('#user-container').empty();
         $.ajax({
@@ -17,12 +29,9 @@ $(document).ready(function() {
                         </td>
                         <td>${user.phone}</td>
                         <td>${user.email}</td>
-                        <td>${new Date(user.created_at).toLocaleDateString('en-US')}</td>
+                        <td>${formatDate(user.created_at)}</td>
                         <td class="flex justify-center gap-2 text-center items-center py-5">
-                            <img class="w-8 h-8 rounded-md bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" src="/img/baned.svg" alt="">
-                            <svg class="w-8 h-8 rounded-md text-red-500 bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-                            </svg>
+                            <img class="ban-user-btn w-8 h-8 rounded-md bg-pink-200 cursor-pointer hover:bg-pink-300 duration-500 py-1 px-1" data-user-id="${user.id}" src="/img/baned.svg" alt="">
                         </td>
                     </tr>
                     `;
@@ -35,5 +44,21 @@ $(document).ready(function() {
             }
         });
     }
+
+    $(document).on('click', '.ban-user-btn', function() {
+        var userId = $(this).data('user-id');
+        $.ajax({
+            url: '/banUser',
+            type: 'POST',
+            data: {userId: userId },
+            success: function(response) {
+                fetchUsers();
+            },
+            error: function(xhr){
+                console.log(xhr.responseText);
+            }
+        });
+    });
     fetchUsers();
+
 })

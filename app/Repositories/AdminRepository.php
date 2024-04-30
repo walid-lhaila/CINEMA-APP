@@ -11,7 +11,7 @@ class AdminRepository implements AdminRepositoryInterface
 {
     public function getAllUsers()
     {
-        return User::all();
+        return User::whereNull('banned_at')->get();
     }
     public function getAllCinemas()
     {
@@ -35,7 +35,9 @@ class AdminRepository implements AdminRepositoryInterface
         return Movie::count();
     }
 
-
+        public function banUser($userId){
+            return User::where('id', $userId)->update(['banned_at' => NOW()]);
+        }
 
 
 

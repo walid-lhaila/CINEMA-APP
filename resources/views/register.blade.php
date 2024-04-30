@@ -1,5 +1,55 @@
 @extends('header')
+<style>
+    #spinner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
+    .spinner-border-gray {
+        width: 4rem;
+        height: 4rem;
+        border: 4px solid #ff6613;
+        border-radius: 50%;
+        border-color: #ff6613 transparent transparent transparent;
+        animation: spin-gray 0.6s linear infinite;
+    }
+
+    .spinner-border-orange {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        border: 4px solid #bbbbbb;
+        border-radius: 50%;
+        border-color: #bbbbbb transparent transparent transparent;
+        animation: spin-orange 0.6s linear infinite;
+    }
+
+    @keyframes spin-gray {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin-orange {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+
+</style>
+
+<div id="spinner">
+    <div class="spinner-border-gray" role="status"></div>
+    <div class="spinner-border-orange" role="status"></div>
+</div>
 <section class="bg-gradient-to-b from-gray-100 ">
     <div class="flex justify-center min-h-screen">
         <div class=" bg-cover w-[1100px]" style="background-image: url('img/register.jpg')">
@@ -159,3 +209,5 @@
 </section>
 
 <script src="{{url('js/register.js')}}"></script>
+<script src="{{url('js/spinner.js')}}"></script>
+

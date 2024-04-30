@@ -12,4 +12,5 @@ interface AdminServiceInterface
     public function getLatestMovies();
     public function getAllUsers();
     public function getAllCinemas();
+    public function banUser($userId);
 }

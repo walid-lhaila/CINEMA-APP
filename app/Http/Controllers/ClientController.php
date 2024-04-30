@@ -54,7 +54,7 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         $category = Category::find($categoryId);
-        $movies = $this->clientServices->getMovieOfCategory($categoryId);
+        $movies = $this->clientServices->moviesOfCategory($categoryId);
         return view('client.moviesOfCategory', compact('movies', 'category','user'));
     }
 

@@ -15,6 +15,29 @@ class LoginRepository implements LoginRepositoryInterface
     {
         return Hash::check($password, $user->password);
     }
+
+    public function create(array $data, $type)
+    {
+        $user = User::create([
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+        ]);
+
+        switch ($type) {
+            case 'client':
+                $user->client()->create([]);
+                break;
+            case 'filmmaker':
+                $user->filmmaker()->create([]);
+                break;
+            case 'admin':
+                $user->admin()->create([]);
+                break;
+        }
+        return $user;
+    }
 }
 
 

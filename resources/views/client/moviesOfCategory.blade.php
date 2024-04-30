@@ -1,53 +1,5 @@
 @extends('header')
 
-<style>
-    #spinner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-
-    .spinner-border-gray {
-        width: 4rem;
-        height: 4rem;
-        border: 4px solid #ff6613;
-        border-radius: 50%;
-        border-color: #ff6613 transparent transparent transparent;
-        animation: spin-gray 0.6s linear infinite;
-    }
-
-    .spinner-border-orange {
-        position: absolute;
-        width: 3rem;
-        height: 3rem;
-        border: 4px solid #bbbbbb;
-        border-radius: 50%;
-        border-color: #bbbbbb transparent transparent transparent;
-        animation: spin-orange 0.6s linear infinite;
-    }
-
-    @keyframes spin-gray {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes spin-orange {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg);
-        }
-    }
-
-</style>
-
-
 <div id="spinner">
     <div class="spinner-border-gray" role="status"></div>
     <div class="spinner-border-orange" role="status"></div>
@@ -58,11 +10,11 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+    <div class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/ticket">TICKETS</a>
-    </nav>
+    </div>
     <div class="flex gap-6 text-center items-center">
         <div class="z-10 flex text-center items-center gap-2">
             <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -116,13 +68,6 @@
                 </div>
             </div>
             @endforeach
-
-
-
-
-
-
-
         </div>
 
     </div>

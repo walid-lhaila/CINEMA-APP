@@ -1,5 +1,4 @@
 @extends('header')
-
 <style>
     #spinner {
         display: flex;
@@ -46,21 +45,19 @@
     }
 
 </style>
-
-
-
-
-
-
+<div id="spinner">
+    <div class="spinner-border-gray" role="status"></div>
+    <div class="spinner-border-orange" role="status"></div>
+</div>
 <div class="flex justify-between h-[70px] w-full z-10 items-center bg-black px-10">
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="z-10 text-white ml-[120px] font-medium flex justify-center items-center text-sm  gap-5">
+    <div class="z-10 text-white ml-[120px] font-medium flex justify-center items-center text-sm  gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1" href="/home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="/allMovie">MOVIES</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1" href="/ticket">TICKETS</a>
-    </nav>
+    </div>
 
     <div class="flex gap-6 text-center items-center">
         <div class="z-10 flex text-center items-center gap-2">
@@ -170,6 +167,6 @@
         window.location.href = "{{ url('movieDetails') }}/" + movieId;
     }
 </script>
-
+<script src="{{url('js/spinner.js')}}"></script>
 
 

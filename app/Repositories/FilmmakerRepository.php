@@ -29,7 +29,7 @@ class FilmmakerRepository implements FilmmakerRepositoryInterface
         $filmmaker = Auth::user()->filmmaker->id;
         return Movie::where('filmmaker_id', $filmmaker)
             ->with('cinema', 'category')
-            ->get();
+            ->paginate(5);
     }
 }
 

@@ -28,6 +28,22 @@ class LoginService implements LoginServiceInterface
 
         return ['status' => 'success', 'user' => $user];
     }
+    public function findOrCreateGoogleUser(SocialiteUser $googleUser)
+    {
+        $user = $this->loginRepository->findUserByEmail($googleUser->getEmail());
+
+        if ($user) {
+            return $user;
+        }
+
+        // Create a client instead of a regular user
+        return $this->loginRepository->create([
+            'firstName' => $googleUser->getName(),
+            'lastName' => $googleUser->getName(),
+            'email' => $googleUser->getEmail(),
+            'password' => Hash::make(str_random(20)),
+        ], 'client');
+    }
 }
 
 

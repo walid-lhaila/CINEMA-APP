@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/spinner.css')}}">
+    <link href='{{ public_path('css/pdf.css') }}' rel='stylesheet'>
     @vite('resources/css/app.css')
-
-    <title>Document</title>
+    <title>Cinemas</title>
 </head>
 <body>
 

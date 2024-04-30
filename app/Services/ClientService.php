@@ -32,9 +32,9 @@ class ClientService implements ClientServiceInterface
     {
         return $this->clientRepository->getCategories();
     }
-    public function getMovieOfCategory($categoryId)
+    public function moviesOfCategory($categoryId)
     {
-        return $this->clientRepository->getMovieOfCategory($categoryId);
+        return $this->clientRepository->moviesOfCategory($categoryId);
     }
 
     public function getLatestMovies()

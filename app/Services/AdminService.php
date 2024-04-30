@@ -48,7 +48,10 @@ class AdminService implements AdminServiceInterface
         return $this->adminRepository->getLatestMovies();
     }
 
-
+    public function banUser($userId)
+    {
+        return $this->adminRepository->banUser($userId);
+    }
 
     public function getAllUsers()
     {

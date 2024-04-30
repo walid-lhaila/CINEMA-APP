@@ -75,6 +75,9 @@
                     <div class="w-full h-[2px] bg-gray-300 "></div>
                 </div>
             @endforeach
+                {{ $movies->links() }}
+
+
         @else
             <div class="text-center text-2xl text-gray-600 mt-5">No movies found</div>
         @endisset
@@ -89,7 +92,7 @@
             successMessage.classList.add('scale-0');
             setTimeout(function() {
                 successMessage.remove();
-            }, 500);
+            }, 1000);
         }
-    }, 2000);
+    }, 6000);
 </script>

@@ -51,7 +51,7 @@ $(document).ready(function() {
             url: '/getMovieCount',
             type: 'GET',
             success: function (response) {
-                $('#cinema-count').text(response.cinemaCount);
+                $('#movie-count').text(response.movieCount);
             },
             error: function(xhr) {
                 console.log(xhr.responseText)
@@ -158,7 +158,7 @@ $(document).ready(function() {
 
     function getLatestMovies() {
         $.ajax({
-            url: '/getLatestMovie',
+            url: 'getLatestMovies',
             type: 'GET',
             success: function (response) {
                 $('#latest-movies').empty();
@@ -167,7 +167,7 @@ $(document).ready(function() {
                         <tr style="display: none;">
                          <td>${movie.id}</td>
                          <td>${movie.title}</td>
-                          <td>${movie.category.name}</td>
+                          <td>${formatDate(movie.date)}</td>
                             <td class="py-3">${formatDate(movie.created_at)}</td>
                     </tr>
                     `;

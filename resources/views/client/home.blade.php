@@ -44,18 +44,7 @@
         }
     }
 
-    <style>
-     .hide-scroll-bar {
-         -ms-overflow-style: none;
-         scrollbar-width: none;
-     }
-    .hide-scroll-bar::-webkit-scrollbar {
-        display: none;
-    }
 </style>
-
-</style>
-
 
 <div id="spinner">
     <div class="spinner-border-gray" role="status"></div>
@@ -66,11 +55,11 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+    <div class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="/home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/ticket">TICKETS</a>
-    </nav>
+    </div>
     <div class="flex gap-6 text-center items-center">
         <div class="z-10 flex text-center items-center gap-2">
             <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

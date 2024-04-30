@@ -38,7 +38,11 @@ class AdminController extends Controller
         return response()->json(['movieCount' => $this->adminService->getMovieCount()]);
     }
 
-
+    public function banUser(Request $request)
+    {
+        $userId = $request->input('userId');
+        return $this->adminService->banUser($userId);
+    }
 
 
     public function getLatestUsers()
@@ -59,6 +63,7 @@ class AdminController extends Controller
     public function getLatestMovies()
     {
         $latestMovies = $this->adminService->getLatestMovies();
+        return response()->json($latestMovies);
     }
 
 

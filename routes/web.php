@@ -24,19 +24,22 @@ Route::get('/notLogged', function () {
 
 Route::post('/filmmakers/register', [\App\Http\Controllers\RegisterController::class, 'filmmakerStore'])->name('filmmakers.store');
 Route::post('/clients/register', [\App\Http\Controllers\RegisterController::class, 'clientStore'])->name('clients.store');
+    Route::get('banned', [\App\Http\Controllers\LoginController::class, 'banned'])->name('banned');
 Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login.submit');
+Route::get('/auth/google/redirect', [\App\Http\Controllers\LoginController::class, 'redirectToGoogle'])->name('auth.google.redirect');
+Route::get('/auth/google/callback', [\App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);
 
 
 Route::middleware(['role:client'])->group(function () {
     Route::get('allMovie', [\App\Http\Controllers\ClientController::class, 'allMovie']);
     Route::get('getAllMovies', [\App\Http\Controllers\ClientController::class, 'getAllMovies'])->name('getAllMovies');
     Route::get('movieDetails/{id}', [\App\Http\Controllers\ClientController::class, 'movieDetails']);
-    Route::get('moviesOfCategory/{categoryId}', [\App\Http\Controllers\ClientController::class, 'getMovieOfCategory'])->name('getMovieOfCategory');
+    Route::get('category/{categoryId}/movies', [\App\Http\Controllers\ClientController::class, 'getMovieOfCategory'])->name('getMovieOfCategory');
     Route::post('/reservation/{movie}', [\App\Http\Controllers\ReservationController::class, 'storeReservation'])->name('addReservation');
     Route::get('moviesOfCategory/{category}', [\App\Http\Controllers\ClientController::class, 'moviesOfCategory'])->name('moviesOfCategory');
     Route::get('ticket', [\App\Http\Controllers\ClientController::class, 'ticket']);
     Route::get('home', [\App\Http\Controllers\ClientController::class, 'home']);
-    Route::get('/test-pdf', [\App\Http\Controllers\PdfController::class,'printPdf']);
+    Route::post('/pdf', [\App\Http\Controllers\PdfController::class, 'generate'])->name('generate.ticket');
 });
 
 
@@ -50,11 +53,11 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('getLatestUsers', [\App\Http\Controllers\AdminController::class, 'getLatestUsers'])->name('getLatestUsers');
     Route::get('getLatestCinemas', [\App\Http\Controllers\AdminController::class, 'getLatestCinemas'])->name('getLatestCinemas');
     Route::get('getLatestCategories', [\App\Http\Controllers\AdminController::class, 'getLatestCategories'])->name('getLatestCategories');
-    Route::get('getLatestMovie', [\App\Http\Controllers\AdminController::class, 'getLatestMovies'])->name('getLatestMovies');
+    Route::get('getLatestMovies', [\App\Http\Controllers\AdminController::class, 'getLatestMovies'])->name('getLatestMovies');
 
     Route::get('users', [\App\Http\Controllers\AdminController::class, 'users']);
     Route::get('getAllUsers', [\App\Http\Controllers\AdminController::class, 'getAllUsers'])->name('getAllUsers');
-
+    Route::post('/banUser', [\App\Http\Controllers\AdminController::class, 'banUser']);
     Route::get('movies', [\App\Http\Controllers\AdminController::class, 'movies']);
 
     Route::get('rooms', [\App\Http\Controllers\AdminController::class, 'rooms'])->name('rooms');

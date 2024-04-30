@@ -5,6 +5,7 @@ use App\Models\Category;
 use App\Models\Movie;
 use App\Models\Reservation;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class ClientRepository implements ClientRepositoryInterface
 {
@@ -22,7 +23,8 @@ class ClientRepository implements ClientRepositoryInterface
 
     public function getReservations()
     {
-        return Reservation::with('movie')->get();
+        $userId = Auth::user()->client->id;
+        return Reservation::where('client_id', $userId)->with('movie')->paginate(3);
     }
 
     public function getCategories()
@@ -30,7 +32,7 @@ class ClientRepository implements ClientRepositoryInterface
         return Category::all();
     }
 
-    public function getMovieOfCategory($categoryId)
+    public function moviesOfCategory($categoryId)
     {
         return Movie::where('category_id', $categoryId)->get();
     }

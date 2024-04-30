@@ -219,7 +219,7 @@
                             <th>ID</th>
                             <th>FULL NAME</th>
                             <th>EMAIL</th>
-                            <th class="py-3">ROLE</th>
+                            <th class="py-3">PHONE</th>
                         </thead>
 
                         <tbody id="latest-users" class="text-md text-white">
@@ -253,11 +253,10 @@
                     <table class="w-full text-center">
                         <thead class="text-gray-200 text-sm border-b border-gray-700">
                         <th>ID</th>
-                        <th>FULL NAME</th>
-                        <th>EMAIL</th>
-                        <th class="py-3">ROLE</th>
+                        <th>TITLE</th>
+                        <th>DATE</th>
+                        <th class="py-3">CREATED</th>
                         </thead>
-
                         <tbody id="latest-movies" class="text-md text-white">
 
                         </tbody>

@@ -46,7 +46,6 @@
 
 </style>
 
-
 <div id="spinner">
     <div class="spinner-border-gray" role="status"></div>
     <div class="spinner-border-orange" role="status"></div>
@@ -58,11 +57,11 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+    <div class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 text-orange-500" href="/ticket">TICKETS</a>
-    </nav>
+    </div>
     <div class="flex gap-6 text-center items-center">
         <div class="z-10 flex text-center items-center gap-2">
             <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -85,7 +84,7 @@
 
 <div class="w-[80%] mt-44 mx-auto">
     <div class="w-[70%] mx-auto">
-        <div class="flex flex-wrap gap-5">
+        <div class="flex justify-center flex-wrap gap-5">
             @foreach($reservations as $reservation)
             <div class="w-[330px] bg-gray-200 rounded-md" >
                 <div class="flex justify-between items-center ">
@@ -120,7 +119,18 @@
                     <div class="w-[20px] h-[30px] rounded-tl-xl rounded-bl-xl bg-white"></div> <!-- Right semicircle -->
                 </div>
                 <div class="py-5 flex justify-center items-center">
-                        <button class="bg-orange-500 text-white px-4 py-1 font-medium text-sm font-mono hover:translate-y-1 duration-700 ">Download</button>
+                    <form method="post" action="{{ route('generate.ticket') }}">
+                        @csrf
+                        <input type="hidden" name="cinema" value="{{$reservation->movie->cinema->name}}">
+                        <input type="hidden" name="title" value="{{$reservation->movie->title}}">
+                        <input type="hidden" name="image" value="{{$reservation->movie->image}}">
+                        <input type="hidden" name="seats" value="{{$reservation->movie->room->seats}}">
+                        <input type="hidden" name="date" value="{{$reservation->movie->date}}">
+                        <input type="hidden" name="address" value="{{$reservation->movie->cinema->address}}">
+                        <button type="submit" class="bg-orange-500 text-white px-4 py-1 font-medium text-sm font-mono hover:translate-y-1 duration-700">
+                            Download
+                        </button>
+                    </form>
                 </div>
                 <div class="flex justify-between items-center mt-5">
                     <div class="bg-white w-[30px] h-[30px] rounded-md"></div>
@@ -129,7 +139,7 @@
                 </div>
             </div>
             @endforeach
-
+                {{ $reservations->links() }}
 
 
 

@@ -14,4 +14,5 @@ interface AdminRepositoryInterface
     public function getLatestCinemas();
     public function getLatestCategories();
     public function getLatestMovies();
+    public function banUser($userId);
 }

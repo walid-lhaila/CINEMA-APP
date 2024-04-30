@@ -1,5 +1,4 @@
 @extends('header')
-
 <style>
     #spinner {
         display: flex;
@@ -47,7 +46,6 @@
 
 </style>
 
-
 <div id="spinner">
     <div class="spinner-border-gray" role="status"></div>
     <div class="spinner-border-orange" role="status"></div>
@@ -59,11 +57,11 @@
     <div class="z-10">
         <img class="w-[145px] h-[100px]" src="{{url('img/Nlogo.png')}}" alt="">
     </div>
-    <nav class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
+    <div class="ml-[120px] z-10 text-white font-medium flex justify-center items-center text-sm gap-5">
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/home">HOME</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/allMovie">MOVIES</a>
         <a class="hover:text-orange-500 duration-500 hover:mt-1 " href="/ticket">TICKETS</a>
-    </nav>
+    </div>
     <div class="flex gap-6 text-center items-center">
         <div class="z-10 flex text-center items-center gap-2">
             <svg class="w-8 h-8 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -108,12 +106,16 @@
                 <p class="text-gray-500 text-md">{{$movie->category->name}} / 1 Day</p>
             </div>
             <div>
+                @if(\Carbon\Carbon::parse($movie->date)->isPast())
+                    <p class="text-red-500 font-bold font-serif text-lg">This movie was already finished</p>
+                @else
                 <form action="{{ route('addReservation', $movie->id) }}" method="POST">
                     @csrf
                     <button type="submit" class="text-white bg-orange-500 font-medium text-md hover:bg-orange-400 px-10 py-2">
                         Get Ticket
                     </button>
                 </form>
+                @endif
             </div>
         </div>
         <div class="flex gap-10 items-center mt-5">
@@ -172,18 +174,13 @@
 @extends('footer')
 
 <script>
-    // Get the video element
     var video = document.getElementById("myVideo");
-
-    // Function to replay the video from the beginning when it ends
     function replayVideo() {
-        video.currentTime = 0; // Set current time to start of the video
-        video.play(); // Start playing the video
+        video.currentTime = 0;
+        video.play();
     }
 
-    // Listen for the 'ended' event of the video element
     video.addEventListener("ended", function() {
-        // Call the replayVideo function when the video ends
         replayVideo();
     });
 </script>
@@ -195,8 +192,8 @@
             successMessage.classList.add('scale-0');
             setTimeout(function() {
                 successMessage.remove();
-            }, 500);
+            }, 1000);
         }
-    }, 2000);
+    }, 6000);
 </script>
 
