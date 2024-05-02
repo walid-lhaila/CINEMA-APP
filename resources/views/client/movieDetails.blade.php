@@ -72,7 +72,7 @@
         <a href="login"><buton class="font-bold text-white bg-orange-500 font-mono px-4 py-1 hover:bg-red-600 rounded-b-lg hover:rounded-t-lg hover:rounded-b cursor-pointer duration-500">LOG OUT</buton></a>
     </div>
 </div>
-<div class="relative bg-cover bg-center h-[500px] " style="background-image: url('img/image1.jpg');">
+<div class="relative bg-no-repeat bg-cover bg-center h-[500px] " style="background-image: url('img/image7.jpg');">
     <div class="absolute w-full h-full inset-0 bg-opacity-50 backdrop-filter backdrop-blur-md flex flex-col justify-center items-center bg-black z-50 duration-300">
         @if(session('success'))
             <div id="successMessage"  class="flex w-full max-w-sm overflow-hidden bg-green-100  rounded-lg shadow-md ">
@@ -156,7 +156,7 @@
                         <div class="w-full px-3">
                             <p class="text-gray-300 text-xs ">{{$movie->category->name}}/ 180 Mins</p>
                             <h1 class="text-white font-bold text-sm font-mono py-2">{{$movie->title}}</h1>
-                            <button class="bg-white px-4 py-1 text-sm text-black hover:text-white hover:bg-orange-500 duration-500">Détails</button>
+                            <a href="{{ url('movieDetails') }}/{{ $movie->id }}" class="bg-orange-400 px-2 text-sm text-white hover:bg-black py-1 duration-500 mt-2">Détails</a>
                         </div>
                     </div>
                 </div>

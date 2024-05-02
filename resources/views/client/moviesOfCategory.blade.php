@@ -62,7 +62,10 @@
                         </div>
                         <div class="flex gap-3 mt-1">
                             <a href="{{ url('movieDetails/'.$movie->id) }}" class="text-gray-500 bg-gray-200 text-sm px-3 py-1 hover:text-white hover:bg-orange-500 duration-500 font-medium">Détails</a>
-                            <button class="text-gray-500 bg-gray-200 text-sm px-3 py-1 hover:text-white hover:bg-orange-500 duration-500 font-medium">Get Ticket</button>
+                            <form action="{{ route('addReservation', $movie->id) }}" method="POST">
+                                @csrf
+                                <button class="text-gray-500 bg-gray-200 text-sm px-3 py-1 hover:text-white hover:bg-orange-500 duration-500 font-medium">Get Ticket</button>
+                            </form>
                         </div>
                     </div>
                 </div>

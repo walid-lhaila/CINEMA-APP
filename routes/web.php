@@ -24,7 +24,7 @@ Route::get('/notLogged', function () {
 
 Route::post('/filmmakers/register', [\App\Http\Controllers\RegisterController::class, 'filmmakerStore'])->name('filmmakers.store');
 Route::post('/clients/register', [\App\Http\Controllers\RegisterController::class, 'clientStore'])->name('clients.store');
-    Route::get('banned', [\App\Http\Controllers\LoginController::class, 'banned'])->name('banned');
+Route::get('banned', [\App\Http\Controllers\LoginController::class, 'banned'])->name('banned');
 Route::post('login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login.submit');
 Route::get('/auth/google/redirect', [\App\Http\Controllers\LoginController::class, 'redirectToGoogle'])->name('auth.google.redirect');
 Route::get('/auth/google/callback', [\App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);

@@ -70,11 +70,15 @@
             </div>
 
         </div>
-        <button type="submit" class="text-white  inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-3 text-center ">
-            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-            Add new Movie
-        </button>
+            <button type="submit" class="text-white  inline-flex items-center bg-orange-500 hover:bg-orange-600  duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-3 text-center mt-2">
+                <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                Add new Movie
+            </button>
+
     </form>
+    <div class="flex justify-end">
+          <a href="/addMovies"><button class="bg-gray-600 text-white font-bold font-serif text-md px-10 py-3 hover:bg-gray-800 rounded-lg text-center duration-500">Back</button></a>
+    </div>
 </div>
 <script>
     document.getElementById('cinema_id').addEventListener('change', function() {
